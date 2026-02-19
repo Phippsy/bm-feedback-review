@@ -643,6 +643,42 @@
         font-size: 0.625rem;
         margin-left: 0.5rem;
       }
+      .annotation-note .an-actions {
+        float: right;
+        display: inline-flex;
+        gap: 0.25rem;
+      }
+      .annotation-note .an-actions button {
+        background: none;
+        border: none;
+        font-size: 0.625rem;
+        cursor: pointer;
+        padding: 0 0.25rem;
+        color: var(--text-muted);
+        font-family: inherit;
+      }
+      .annotation-note .an-actions button:hover {
+        color: var(--accent);
+        text-decoration: underline;
+      }
+      .annotation-note .an-edit-form {
+        margin-top: 0.375rem;
+      }
+      .annotation-note .an-edit-form textarea {
+        width: 100%;
+        padding: 0.375rem;
+        border: 1px solid var(--border);
+        border-radius: 0.25rem;
+        font-size: 0.75rem;
+        font-family: inherit;
+        resize: vertical;
+        min-height: 2rem;
+      }
+      .annotation-note .an-edit-form .an-edit-btns {
+        display: flex;
+        gap: 0.375rem;
+        margin-top: 0.25rem;
+      }
 
       /* ======== SENTIMENT & THEMES (overview section) ======== */
       .sentiment-banner {
@@ -1115,7 +1151,8 @@
 
         // Load remote data if persistence configured
         if (CONFIG.PERSISTENCE_ENABLED && CONFIG.APPS_SCRIPT_URL) {
-          loadRemoteData();
+          await loadRemoteData();
+          restoreUserVotes();
         }
       });
 
@@ -1179,6 +1216,7 @@
             <div class="fd-box"><div class="fd-box-label">🚀 Priority Signals</div><div class="fd-box-value">${esc(f.priority_signals)}</div></div>
           </div>
         </div>
+        ${annotationHTML('feature_requests', i)}
       </div>`;
           })
           .join("");
@@ -1243,6 +1281,7 @@
         document.getElementById('voter-selected').style.display = 'flex';
         document.querySelector('#voter-identity-bar .identity-hint').style.display = 'none';
         localStorage.setItem('bm_voter_name', btn.textContent.trim());
+        restoreUserVotes();
         // Also sync annotator if not yet set
         if (!document.getElementById('annotator-name').value) {
           const match = document.querySelector(`#annotator-chips .name-chip:nth-child(${Array.from(btn.parentNode.children).indexOf(btn) + 1})`);
@@ -1375,12 +1414,13 @@
             `✓ ${votesArray.length} priorities saved for ${voterName}`,
             "success",
           );
-          loadRemoteData(); // refresh
+          await loadRemoteData();
+          restoreUserVotes();
         } catch (e) {
           showToast("Failed to save — check config.js", "error");
         } finally {
           btn.disabled = false;
-          btn.textContent = "Submit Priorities";
+          btn.textContent = "Update Priorities";
         }
       }
 
@@ -1501,6 +1541,11 @@
         panels.innerHTML = panelHtml;
       }
 
+      function getCurrentUserName() {
+        return document.getElementById('voter-name').value.trim() ||
+               document.getElementById('annotator-name').value.trim() || '';
+      }
+
       function annotationHTML(category, itemIndex) {
         const key = `${category}_${itemIndex}`;
         const existing = ALL_ANNOTATIONS.filter(
@@ -1508,6 +1553,7 @@
             a.category === category &&
             String(a.item_index) === String(itemIndex),
         );
+        const currentUser = getCurrentUserName();
 
         let existingHtml = "";
         if (existing.length) {
@@ -1515,10 +1561,18 @@
             '<div class="existing-annotations">' +
             existing
               .map(
-                (a) => `<div class="annotation-note">
-        <span class="an-author">${esc(a.author_name)}</span><span class="an-time">${formatTime(a.timestamp)}</span>
-        <div>${esc(a.note)}</div>
-      </div>`,
+                (a) => {
+                  const isOwn = currentUser && a.author_name === currentUser;
+                  const safeTs = (a.timestamp || '').replace(/'/g, "\\'");
+                  const safeAuthor = (a.author_name || '').replace(/'/g, "\\'");
+                  const actionsHtml = isOwn
+                    ? `<span class="an-actions"><button onclick="editAnnotation('${safeTs}', '${safeAuthor}', '${category}', ${itemIndex})">✏️ edit</button><button onclick="deleteAnnotation('${safeTs}', '${safeAuthor}', '${category}', ${itemIndex}, ${a._row || 0})">🗑 delete</button></span>`
+                    : '';
+                  return `<div class="annotation-note" id="ann-${safeTs}">
+        ${actionsHtml}<span class="an-author">${esc(a.author_name)}</span><span class="an-time">${formatTime(a.timestamp)}</span>
+        <div class="an-text">${esc(a.note)}</div>
+      </div>`;
+                },
               )
               .join("") +
             "</div>";
@@ -1555,6 +1609,69 @@
         form.classList.toggle("open");
         if (form.classList.contains("open")) {
           document.getElementById("anninput-" + key).focus();
+        }
+      }
+
+      function editAnnotation(timestamp, authorName, category, itemIndex) {
+        const ann = ALL_ANNOTATIONS.find(
+          a => a.timestamp === timestamp && a.author_name === authorName &&
+               a.category === category && String(a.item_index) === String(itemIndex)
+        );
+        if (!ann) return;
+        const noteEl = document.getElementById('ann-' + timestamp.replace(/'/g, "\\'"));
+        if (!noteEl) return;
+        const textEl = noteEl.querySelector('.an-text');
+        textEl.innerHTML = `<div class="an-edit-form">
+          <textarea id="edit-ann-${timestamp}">${esc(ann.note)}</textarea>
+          <div class="an-edit-btns">
+            <button class="btn btn-primary btn-sm" onclick="saveAnnotationEdit('${timestamp.replace(/'/g, "\\\'")}', '${authorName.replace(/'/g, "\\\'")}', '${category}', ${itemIndex}, ${ann._row || 0})">Save</button>
+            <button class="btn btn-outline-dark btn-sm" onclick="cancelAnnotationEdit()">Cancel</button>
+          </div>
+        </div>`;
+      }
+
+      function cancelAnnotationEdit() {
+        renderFeatures();
+        renderFeedback();
+      }
+
+      async function saveAnnotationEdit(timestamp, authorName, category, itemIndex, row) {
+        const textarea = document.querySelector('.an-edit-form textarea');
+        if (!textarea) return;
+        const newNote = textarea.value.trim();
+        if (!newNote) { showToast('Note cannot be empty', 'error'); return; }
+
+        try {
+          await postToSheets({
+            action: 'update_annotation',
+            author_name: authorName,
+            row: row,
+            note: newNote
+          });
+          showToast('✓ Note updated', 'success');
+          await loadRemoteData();
+          renderFeatures();
+          renderFeedback();
+        } catch (e) {
+          showToast('Failed to update note', 'error');
+        }
+      }
+
+      async function deleteAnnotation(timestamp, authorName, category, itemIndex, row) {
+        if (!confirm('Delete this note?')) return;
+        try {
+          await postToSheets({
+            action: 'delete_annotation',
+            author_name: authorName,
+            row: row,
+            timestamp: timestamp
+          });
+          showToast('✓ Note deleted', 'success');
+          await loadRemoteData();
+          renderFeatures();
+          renderFeedback();
+        } catch (e) {
+          showToast('Failed to delete note', 'error');
         }
       }
 
@@ -1598,6 +1715,7 @@
           input.value = "";
           showToast("✓ Note saved", "success");
           await loadRemoteData();
+          renderFeatures();
           renderFeedback();
         } catch (e) {
           showToast("Failed to save note", "error");
@@ -1618,10 +1736,11 @@
         }
 
         // Combine remote + local votes for display
-        const allVotes = [...ALL_TEAM_VOTES];
-        // Add local unsaved votes as preview
+        // Filter out current user's remote votes to avoid double-counting with local VOTES
         const localName =
           document.getElementById("voter-name").value.trim() || "You (unsaved)";
+        const allVotes = ALL_TEAM_VOTES.filter(v => v.voter_name !== localName);
+        // Add current user's local votes (may be unsaved edits)
         Object.entries(VOTES).forEach(([fid, priority]) => {
           const idx = parseInt(fid.replace("feature_", ""), 10);
           const title = (features[idx] || {}).feature_title || fid;
@@ -1758,6 +1877,37 @@
           ALL_ANNOTATIONS = annotationsResp.annotations || [];
         } catch (e) {
           console.warn("Could not load remote data:", e);
+        }
+      }
+
+      function restoreUserVotes() {
+        const voterName = document.getElementById('voter-name').value.trim();
+        if (!voterName || !ALL_TEAM_VOTES.length || !DATA) return;
+
+        // Build title → feature_N mapping
+        const titleToFid = {};
+        (DATA.feature_requests || []).forEach((f, i) => {
+          titleToFid[f.feature_title] = 'feature_' + i;
+        });
+
+        // Extract this user's votes from remote data
+        const restoredVotes = {};
+        ALL_TEAM_VOTES.forEach(v => {
+          if (v.voter_name === voterName) {
+            const fid = titleToFid[v.feature_id];
+            if (fid) restoredVotes[fid] = v.priority;
+          }
+        });
+
+        // Only overwrite if the user hasn't started making new local changes
+        // (i.e. VOTES is empty — user just loaded or selected name)
+        if (Object.keys(restoredVotes).length > 0) {
+          VOTES = restoredVotes;
+          renderFeatures();
+          updateVoteSummary();
+          updateSubmitState();
+          // Switch button text since they've already submitted before
+          document.getElementById('submit-votes-btn').textContent = 'Update Priorities';
         }
       }
 
