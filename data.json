@@ -1,0 +1,1486 @@
+{
+  "emotions": [
+    {
+      "quote": "It's super helpful.",
+      "speaker": "Unknown",
+      "summary": "The tool feels highly helpful when it works well.",
+      "significance": "Signals strong core value; reinforces focusing on reliability and rollout."
+    },
+    {
+      "quote": "It's clippy on steroids.",
+      "speaker": "Unknown",
+      "summary": "The product is perceived as a powerful assistant for note creation.",
+      "significance": "Positions product as a step-change vs. legacy tooling; can inform messaging/positioning."
+    },
+    {
+      "quote": "It will look more finished.",
+      "speaker": "Unknown",
+      "summary": "Users feel the output appears polished/professional.",
+      "significance": "Output quality is a primary perceived benefit; supports adoption and client-facing use cases."
+    },
+    {
+      "quote": "it's more complete because it's not every other word, it's produced something that is... It's with four sentences.",
+      "speaker": "Unknown",
+      "summary": "Users perceive the AI note as more complete than their rough notes.",
+      "significance": "Demonstrates improved completeness/legibility vs human notes; impacts trust and downstream usability."
+    },
+    {
+      "quote": "You could theoretically polish it and send it to the client.",
+      "speaker": "Unknown",
+      "summary": "Users feel the note can be near-client-ready with minor edits.",
+      "significance": "Indicates potential for client-deliverable workflow; raises stakes for accuracy, disclaimers, and formatting."
+    },
+    {
+      "quote": "And it's searchable, so you can search for words whereas sometimes I search my rough notes... and my spelling is so bad that I can't find what I knew I talked about.",
+      "speaker": "Unknown",
+      "summary": "Users appreciate searchability versus their own hard-to-search notes.",
+      "significance": "Search is a concrete workflow benefit; suggests indexing/export features matter."
+    },
+    {
+      "quote": "the transcript is really helpful as a fallback",
+      "speaker": "Unknown",
+      "summary": "Users feel reassured by having transcript access as a safety net.",
+      "significance": "Highlights the need for reliable fallback mechanisms and easy transcript access."
+    },
+    {
+      "quote": "that really helped.",
+      "speaker": "Unknown",
+      "summary": "Transcript fallback materially helped recover from a failure.",
+      "significance": "Validates transcript-as-backup as critical risk mitigation and retention driver."
+    },
+    {
+      "quote": "it's so useful as a reference when you're trying to get a sense of what the client said to draft something.",
+      "speaker": "Hannah Coupe",
+      "summary": "Exact phrasing capture can be extremely useful for drafting.",
+      "significance": "Shows a high-value job-to-be-done: capturing client wording for accurate drafting."
+    },
+    {
+      "quote": "that's when it works well and I notice how accurate it is and that's really helpful.",
+      "speaker": "Hannah Coupe",
+      "summary": "When accuracy is high, the tool stands out as very helpful.",
+      "significance": "Accuracy is a key determinant of value; quality metrics should prioritize factual and phrasing fidelity."
+    },
+    {
+      "quote": "It's nice to now know that when I go into my next exceptionally busy period, I will not have that hangover... Because there will be this option, hopefully.",
+      "speaker": "Unknown",
+      "summary": "Users feel relief/comfort knowing the tool can prevent backlog during busy periods.",
+      "significance": "Emotional relief is a strong adoption driver; reliability during peak load is crucial."
+    },
+    {
+      "quote": "my ones were seamless, because it can feel seamless using it.",
+      "speaker": "Unknown",
+      "summary": "Some experiences are frictionless when the workflow goes smoothly.",
+      "significance": "Seamlessness is a key product experience goal; informs UX and delivery improvements."
+    },
+    {
+      "quote": "I think it's quite client-friendly.",
+      "speaker": "Unknown",
+      "summary": "Users perceive the approach as acceptable to clients in many cases.",
+      "significance": "Reduces adoption risk; supports scaling if permission/disclosure is handled well."
+    },
+    {
+      "quote": "they probably see it as well... as like a cost savings.",
+      "speaker": "Unknown",
+      "summary": "Clients may perceive AI note-taking as reducing costs (fewer people needed).",
+      "significance": "Creates a client-facing value proposition; can be used in consent scripts and marketing."
+    },
+    {
+      "quote": "Also, like if you were at the end of a hearing... you could theoretically send that note to council straight away.",
+      "speaker": "Unknown",
+      "summary": "Users are excited by immediate downstream sharing to counsel.",
+      "significance": "Supports urgent, litigation-heavy workflows; demands speed + formatting + accuracy."
+    },
+    {
+      "quote": "It's got better.",
+      "speaker": "Unknown",
+      "summary": "Users perceive product quality improving over time.",
+      "significance": "Signals progress and potential to re-engage lapsed users; suggests change communication helps."
+    },
+    {
+      "quote": "I feel like it's with this case... I've been using it a lot more... it's been a lot better and that's since like autumn probably.",
+      "speaker": "Unknown",
+      "summary": "Increased usage correlates with improved experience in recent months.",
+      "significance": "Suggests cohort-specific or model/version improvements; measure by timeframe and matter type."
+    },
+    {
+      "quote": "No, I have the same thing.",
+      "speaker": "Unknown",
+      "summary": "Another user shares the same desire for visible confirmation/status.",
+      "significance": "Corroborates a widespread UX need for progress/status indicators."
+    },
+    {
+      "quote": "I like the visual prompts.",
+      "speaker": "Unknown",
+      "summary": "Users positively value UI cues that reassure recording/transcription is ongoing.",
+      "significance": "Supports investing in in-meeting status UX to increase trust and reduce distraction."
+    },
+    {
+      "quote": "that would be helpful.",
+      "speaker": "Unknown",
+      "summary": "Users welcome labeling/disclosure in the template.",
+      "significance": "Template tweaks are quick wins that support compliance and client trust."
+    },
+    {
+      "quote": "That would be so helpful.",
+      "speaker": "Unknown",
+      "summary": "Users strongly want action point extraction.",
+      "significance": "Action lists are high-leverage value; likely drives habit formation and differentiation."
+    },
+    {
+      "quote": "Yeah, certainly.",
+      "speaker": "Unknown",
+      "summary": "Users affirm action list capability exists in other tools and is desirable.",
+      "significance": "Competitive parity/expectation; informs prioritization."
+    },
+    {
+      "quote": "I like the idea of not having to type... and just having an automated transcript that we are relying on in itself, but we can use just to double check that it's right",
+      "speaker": "Unknown",
+      "summary": "Users like a workflow where transcript supports verification without manual note-taking.",
+      "significance": "Points to an approval/verification flow and controlled retention/purge options."
+    },
+    {
+      "quote": "I think that's a real benefit... that the person... can engage more in the meeting than just sit there typing",
+      "speaker": "Unknown",
+      "summary": "Users see major relational benefits: more engagement and trauma-informed practice.",
+      "significance": "Key narrative: improves client experience and quality of interaction; supports ROI beyond time savings."
+    },
+    {
+      "quote": "[Flipboard note] Seamless! Client-friendly output — as good as a paralegal.",
+      "speaker": "Group consensus",
+      "summary": "Users rate the output quality as comparable to a paralegal, highlighting seamless client-ready delivery.",
+      "significance": "HIGH — sets a concrete quality benchmark (paralegal-level) and confirms the tool meets professional standards for client-facing work."
+    },
+    {
+      "quote": "[Flipboard note] Protection for liability — time saving — having notes already available.",
+      "speaker": "Group consensus",
+      "summary": "Users value the tool for liability protection, perceiving AI-generated notes as a reliable defence record that is available immediately.",
+      "significance": "HIGH — liability/defensibility is a core use case for attendance notes; the group explicitly flagged this as something that works well today."
+    }
+  ],
+  "pains": [
+    {
+      "quote": "Not necessarily accurate though. That's my word, accurate. I don't know, it might not always be as accurate but...",
+      "speaker": "Unknown",
+      "summary": "Users worry the note may look polished yet be inaccurate.",
+      "significance": "Primary risk: false confidence; accuracy and confidence signaling are crucial."
+    },
+    {
+      "quote": "I had an issue in January where my note just never finished and it cut off after six pages.",
+      "speaker": "Unknown",
+      "summary": "System sometimes fails by truncating long notes.",
+      "significance": "Catastrophic failure undermines trust and adoption; must be addressed with reliability and recovery tools."
+    },
+    {
+      "quote": "And I was like, oh my gosh, no. I was actually relying on it, like I wasn't taking full notes.",
+      "speaker": "Unknown",
+      "summary": "Failure is especially painful when users reduce manual note-taking and rely on AI.",
+      "significance": "Reliability directly affects user behavior and risk; requires safeguards and warnings."
+    },
+    {
+      "quote": "Sometimes I'm leaving more meetings now... It's so hard to take an accurate note.",
+      "speaker": "Unknown",
+      "summary": "Increasing meeting load makes manual accurate notes difficult.",
+      "significance": "Strengthens need; also raises stakes for dependable automation."
+    },
+    {
+      "quote": "So often I will write messily in handwriting... because I want to have eye contact.",
+      "speaker": "Unknown",
+      "summary": "Current note-taking methods degrade quality due to the need to maintain rapport.",
+      "significance": "Product’s value ties to freeing attention; UX must not reintroduce cognitive load."
+    },
+    {
+      "quote": "it uses slightly more flowery language than the client used.",
+      "speaker": "Hannah Coupe",
+      "summary": "AI sometimes changes tone/wording, adding “flowery” language.",
+      "significance": "Can distort meaning and authenticity; critical for legal records and statements."
+    },
+    {
+      "quote": "sometimes I do find it adds in things that they didn't necessarily say",
+      "speaker": "Hannah Coupe",
+      "summary": "The note can hallucinate/add content not stated by the client.",
+      "significance": "Major compliance/liability risk; demands stronger grounding to transcript and auditing."
+    },
+    {
+      "quote": "it adds a sentence when the client might have just said yes.",
+      "speaker": "Hannah Coupe",
+      "summary": "AI elaborates beyond minimal client responses.",
+      "significance": "Threatens evidentiary defensibility and trust; should preserve uncertainty/minimalism."
+    },
+    {
+      "quote": "if it's adding things then I guess you wouldn't be able to trust what is or isn't what they actually said.",
+      "speaker": "Unknown",
+      "summary": "Added content makes the note unreliable for dispute/defensibility use cases.",
+      "significance": "Trust is central; consider quote mode, traceability, and provenance indicators."
+    },
+    {
+      "quote": "when I'm exceptionally busy, I will not have time to dictate notes.",
+      "speaker": "Unknown",
+      "summary": "Dictation is not feasible during peak workload periods.",
+      "significance": "Time pressure is a core adoption driver; must ensure quick setup and consistent output."
+    },
+    {
+      "quote": "I've done two client calls in the last two days, both of which I did without the AI attendance note on. One because I just didn't want to ask her the question.",
+      "speaker": "Unknown",
+      "summary": "Users avoid using the tool due to awkward permission/consent conversations.",
+      "significance": "Consent friction is a major adoption blocker; needs better scripts, UX, and trust assurances."
+    },
+    {
+      "quote": "One of the barriers is having to ask the client for permission to use, to process their data in that way.",
+      "speaker": "Unknown",
+      "summary": "Explicitly identifies permission/processing disclosure as a barrier.",
+      "significance": "Legal/UX/comms problem; adoption hinges on minimizing social friction while staying compliant."
+    },
+    {
+      "quote": "Talking to her and engaging and making eye contact and making handwritten notes at the same time.",
+      "speaker": "Unknown",
+      "summary": "Manual notes conflict with effective client engagement.",
+      "significance": "Underscores client-experience value; automation must be easy to activate without disrupting rapport."
+    },
+    {
+      "quote": "Once I'd finished the call, I then had to dictate the note, which took maybe 15, 20 minutes.",
+      "speaker": "Unknown",
+      "summary": "Manual note creation after meetings consumes substantial time.",
+      "significance": "Quantified time cost supports ROI and pricing discussions."
+    },
+    {
+      "quote": "it hasn't come back yet from timing.",
+      "speaker": "Unknown",
+      "summary": "Dictation turnaround delays create workflow lag.",
+      "significance": "Speed-to-usable-note is a competitive advantage; highlights current baseline pain."
+    },
+    {
+      "quote": "provided it's accurate and it works, and it's reliable.",
+      "speaker": "Unknown",
+      "summary": "Value is conditional on accuracy and reliability.",
+      "significance": "Reinforces that quality is the gating factor for adoption."
+    },
+    {
+      "quote": "I think it could feel a bit more seamless... depending on the way in which it's delivered.",
+      "speaker": "Unknown",
+      "summary": "Delivery method introduces friction; current flow isn’t fully seamless.",
+      "significance": "Need to improve integration and handoff (Teams, email, forwarding, etc.)."
+    },
+    {
+      "quote": "I think for me, sometimes I find it's almost too good, like it's too formal.",
+      "speaker": "Unknown",
+      "summary": "Output style is overly formal for the intended record.",
+      "significance": "Formatting/tone controls matter; too-formal output increases edit burden."
+    },
+    {
+      "quote": "There's lots of random verbs that are quite descriptive... And it makes it longer.",
+      "speaker": "Unknown",
+      "summary": "Overly descriptive verbs inflate note length.",
+      "significance": "Increases reading/editing time; counsel costs may rise if documents are longer."
+    },
+    {
+      "quote": "it says like my client's agreed and I often prefer just to see my client has said yes.",
+      "speaker": "Unknown",
+      "summary": "Reported speech choices reduce factual precision about what was actually said.",
+      "significance": "Verbatim/near-verbatim may be required for defensibility; suggests quote fidelity mode."
+    },
+    {
+      "quote": "it feels like very formalized in a way that the conversation is not accurate to an accurate presentation of how we were actually speaking necessarily.",
+      "speaker": "Unknown",
+      "summary": "Tone mismatch reduces authenticity and perceived accuracy.",
+      "significance": "Trust and evidentiary usefulness depend on capturing the meeting faithfully."
+    },
+    {
+      "quote": "at the top it says dictated on, but I feel like we need to change that because we've not dictated it.",
+      "speaker": "Unknown",
+      "summary": "Template metadata is inaccurate/misleading.",
+      "significance": "Compliance/professionalism risk; easy fix with immediate user value."
+    },
+    {
+      "quote": "checking that will take time to get it right",
+      "speaker": "Unknown",
+      "summary": "Verification and correction adds time overhead.",
+      "significance": "If edit time stays high, ROI declines; need to reduce review burden."
+    },
+    {
+      "quote": "you'll have to probably cross compare with rough notes that you've done yourself",
+      "speaker": "Unknown",
+      "summary": "Users must cross-check against their own notes due to uncertainty.",
+      "significance": "Shows lack of trust; suggests side-by-side transcript mapping and confidence cues."
+    },
+    {
+      "quote": "Do you know if the cut offs can be triggered by people entering and leaving the meeting?",
+      "speaker": "Unknown",
+      "summary": "Users fear meeting dynamics might cause failures.",
+      "significance": "Reliability uncertainty leads to anxiety; product should clearly communicate failure modes."
+    },
+    {
+      "quote": "if it doesn't work and you're relying on it... that's a problem.",
+      "speaker": "Unknown",
+      "summary": "Failure creates a serious risk when users stop taking manual notes.",
+      "significance": "Need fail-safe behaviors and alerts to prevent silent failure."
+    },
+    {
+      "quote": "I find that quite distracting.",
+      "speaker": "Unknown",
+      "summary": "The live transcription sidebar distracts users during meetings.",
+      "significance": "UI needs to reassure without distracting; status indicator feature could help."
+    },
+    {
+      "quote": "I'm scared to close it in case it stops everything.",
+      "speaker": "Unknown",
+      "summary": "Users are anxious that hiding UI might stop transcription or note generation.",
+      "significance": "Indicates unclear system state; harms usability and confidence."
+    },
+    {
+      "quote": "whilst it's distracting, I prefer to see all the words appearing... than get rid of it. That's just because I'm nervous.",
+      "speaker": "Unknown",
+      "summary": "Users tolerate distraction as a workaround to gain reassurance.",
+      "significance": "Strong signal for reliable, minimal status UX and better education."
+    },
+    {
+      "quote": "it's used interchangeably, HANA and then HC, and that has happened quite a few times.",
+      "speaker": "Unknown",
+      "summary": "Inconsistent naming occurs repeatedly.",
+      "significance": "Creates professionalism risks and editing overhead; needs normalization and participant mapping."
+    },
+    {
+      "quote": "With like key party names... it's spelled wrong",
+      "speaker": "Unknown",
+      "summary": "Proper nouns are frequently misspelled.",
+      "significance": "High-risk for client trust; can cause serious legal/professional errors."
+    },
+    {
+      "quote": "there's a high risk of sending the client a long note that might not be carefully checked with names spelt wrong.",
+      "speaker": "Unknown",
+      "summary": "Risk of shipping incorrect names due to long documents and imperfect review.",
+      "significance": "Suggests need for automated QA checks before sharing externally."
+    },
+    {
+      "quote": "It's a bad look.",
+      "speaker": "Unknown",
+      "summary": "Name errors damage professionalism and trust.",
+      "significance": "Trust impacts retention and willingness to share notes with clients/counsel."
+    },
+    {
+      "quote": "I tried to start the transcript and then it didn't work. And I didn't realise the person who sets up the meeting has to do the transcript.",
+      "speaker": "Unknown",
+      "summary": "Permissions/ownership constraints in Teams block starting transcription.",
+      "significance": "Integration constraints directly harm usability; must be addressed with permissions model or clearer setup."
+    },
+    {
+      "quote": "now I always try and set up the meeting myself",
+      "speaker": "Unknown",
+      "summary": "Users change behavior to avoid setup issues.",
+      "significance": "Workaround indicates friction; product should reduce coordination overhead."
+    },
+    {
+      "quote": "My VA often sets up the Teams meetings. She can't come to all the meetings.",
+      "speaker": "Unknown",
+      "summary": "Admin setup vs meeting attendance causes control problems.",
+      "significance": "Role-based workflow mismatch; needs delegated permissions or alternative start mechanism."
+    },
+    {
+      "quote": "I always take out my adjectives... It might add in something like that.",
+      "speaker": "Unknown",
+      "summary": "Users must delete subjective/adjective content inserted by AI.",
+      "significance": "Edit burden and authenticity concerns; suggests style rules and “minimal embellishment” setting."
+    },
+    {
+      "quote": "there's also like a question of tense and what tense we'd want",
+      "speaker": "Unknown",
+      "summary": "Tense inconsistency is noticeable and undesirable to some users.",
+      "significance": "Style consistency reduces edits and firm-wide standardization issues."
+    },
+    {
+      "quote": "I was trained... I didn't dictate. When I came to this firm, I was like this is so inefficient. Why am I reliving the meeting?",
+      "speaker": "Unknown",
+      "summary": "Dictation is seen as inefficient and cognitively burdensome.",
+      "significance": "Strengthens value case for automation; also sets baseline for what “better” must beat."
+    },
+    {
+      "quote": "the only thing I can think that is lost... is I often find I'll have a longer action point list if I dictate a note than if I just come straight out of the meeting.",
+      "speaker": "Unknown",
+      "summary": "Automation may reduce reflective thinking that occurs during dictation, leading to fewer action points captured.",
+      "significance": "New product should replicate/augment reflection (e.g., action extraction, prompts) to avoid losing value."
+    },
+    {
+      "quote": "sometimes... I have to spend, like, five to ten minutes working out what the final thing we actually decided",
+      "speaker": "Unknown",
+      "summary": "Meetings include iterative decisions, making final action extraction difficult.",
+      "significance": "Action-point generation must handle ambiguity/versioning and identify “final agreed” outcomes."
+    },
+    {
+      "quote": "I'm just a bit worried that something might be taken out of context",
+      "speaker": "Unknown",
+      "summary": "Keeping raw transcripts may create context/misinterpretation risk.",
+      "significance": "Impacts retention policies and file hygiene; suggests controlled access and contextualization features."
+    },
+    {
+      "quote": "My only issue would be who's who.",
+      "speaker": "Unknown",
+      "summary": "Speaker identification is a major concern for in-person recording.",
+      "significance": "Limits expansion beyond Teams; informs roadmap constraints and expectations."
+    },
+    {
+      "quote": "it's really difficult. It's like a nightmare. It's literally hard. I get confused. I know who everyone is, and I'm confused.",
+      "speaker": "Unknown",
+      "summary": "Multi-participant meetings make speaker attribution extremely hard even for humans.",
+      "significance": "Product should help with participant tracking and attribution; critical for family law contexts."
+    },
+    {
+      "quote": "I can't remember if Adele or the client said this",
+      "speaker": "Unknown",
+      "summary": "Unclear speaker attribution harms note accuracy in in-person group meetings.",
+      "significance": "Accuracy requires speaker labeling tools or structured capture methods."
+    },
+    {
+      "quote": "I would struggle to check back.",
+      "speaker": "Unknown",
+      "summary": "Users lack a clear verification path for speaker attribution errors.",
+      "significance": "Need traceability to audio/transcript, speaker diarization confidence, or manual correction workflows."
+    },
+    {
+      "quote": "clients... would struggle with the idea of just coming to an office... and being recorded",
+      "speaker": "Unknown",
+      "summary": "In-person recording may be unacceptable, especially for vulnerable clients.",
+      "significance": "Consent/privacy is heightened in sensitive domains; affects product scope and go-to-market."
+    },
+    {
+      "quote": "a client who's been recorded by their husband for 18 years... I'm pretty sure she would not want to be recorded by us",
+      "speaker": "Unknown",
+      "summary": "Past trauma can make recording itself a non-starter for some clients.",
+      "significance": "Ethical and adoption risk; requires trauma-informed consent flows and alternatives."
+    }
+  ],
+  "goals": [
+    {
+      "quote": "Quicker speed.",
+      "speaker": "Unknown",
+      "summary": "Users want faster note creation than manual methods.",
+      "significance": "Speed is a core value driver and a measurable KPI."
+    },
+    {
+      "quote": "it would be quicker to get a more, an initiative note.",
+      "speaker": "Unknown",
+      "summary": "Users want a usable first draft quickly with fewer spelling issues.",
+      "significance": "Supports positioning around draft readiness and reduced admin time."
+    },
+    {
+      "quote": "It will look more finished.",
+      "speaker": "Unknown",
+      "summary": "Users want polished, professional notes.",
+      "significance": "Formatting/structure quality is central to adoption and sharing."
+    },
+    {
+      "quote": "You could theoretically polish it and send it to the client.",
+      "speaker": "Unknown",
+      "summary": "Users want client-shareable notes after minimal polishing.",
+      "significance": "Indicates a goal of external-grade output and template compliance."
+    },
+    {
+      "quote": "it's searchable, so you can search for words",
+      "speaker": "Unknown",
+      "summary": "Users want notes that are easily searchable for later drafting and reference.",
+      "significance": "Suggests importance of exports, indexing, and matter-level search."
+    },
+    {
+      "quote": "it picks out phrases that are exactly what the client said.",
+      "speaker": "Hannah Coupe",
+      "summary": "Users want verbatim/near-verbatim capture of key client phrasing.",
+      "significance": "Critical for statements, instructions, disputes; implies quote fidelity features."
+    },
+    {
+      "quote": "especially if you're sharing the note with counsel later, for them to get a flavour of what the client's like.",
+      "speaker": "Hannah Coupe",
+      "summary": "Users want notes that convey client personality and phrasing for counsel.",
+      "significance": "Downstream collaboration use case; style settings may vary by audience."
+    },
+    {
+      "quote": "for a statement as well.",
+      "speaker": "Unknown",
+      "summary": "Users want notes that support drafting witness statements.",
+      "significance": "High-stakes legal output; accuracy and wording fidelity are critical."
+    },
+    {
+      "quote": "I really want to know exactly what was said when they're giving those instructions",
+      "speaker": "Unknown",
+      "summary": "Users want exact client instructions captured for communications to the other side.",
+      "significance": "Reduces miscommunication risk; supports trust and client satisfaction."
+    },
+    {
+      "quote": "in two, three months time they said, oh I never said that. You can go back to a note and say no you did say that.",
+      "speaker": "Unknown",
+      "summary": "Users want defensible records to resolve future disputes/complaints.",
+      "significance": "Compliance/liability-driven requirement; drives need for provenance and accuracy."
+    },
+    {
+      "quote": "I will not have that hangover of feeling like I've got ten of ten... Because there will be this option, hopefully.",
+      "speaker": "Unknown",
+      "summary": "Users want to prevent backlog and “hangover” of undrafted notes.",
+      "significance": "Addresses operational risk and stress; adoption likely during peak workloads."
+    },
+    {
+      "quote": "I think it's quite client-friendly.",
+      "speaker": "Unknown",
+      "summary": "Users want a client-acceptable process for recording/transcribing.",
+      "significance": "Consent and UX must support sensitive client interactions."
+    },
+    {
+      "quote": "label it like, this has been used, this has used an AI system. I would rename mine to AI Intendence Note.",
+      "speaker": "Unknown",
+      "summary": "Users want clear labeling/disclosure of AI-generated notes.",
+      "significance": "Supports compliance, transparency, and internal consistency."
+    },
+    {
+      "quote": "Having a note which is usable immediately saves not only the time of getting the note, but also sorting out the note.",
+      "speaker": "Unknown",
+      "summary": "Users want immediate usability to reduce both creation and editing time.",
+      "significance": "“Time-to-usable” is the key metric; editing reduction is as important as generation speed."
+    },
+    {
+      "quote": "you could theoretically send that note to council straight away.",
+      "speaker": "Unknown",
+      "summary": "Users want rapid sharing to counsel in litigation workflows.",
+      "significance": "Demands fast delivery, standardized format, and reliable accuracy."
+    },
+    {
+      "quote": "it must use initials, and then within text... it should use names",
+      "speaker": "Donal Phipps",
+      "summary": "There is an internal goal for consistent naming conventions in the output.",
+      "significance": "Standardization reduces editing and supports firm-wide style consistency."
+    },
+    {
+      "quote": "I prefer it to be consistent.",
+      "speaker": "Unknown",
+      "summary": "Users want consistent name formatting throughout notes.",
+      "significance": "Highlights need for deterministic style rules and QA checks."
+    },
+    {
+      "quote": "I'd mic everyone up.",
+      "speaker": "Unknown",
+      "summary": "Users want accurate speaker attribution in in-person settings (even if difficult).",
+      "significance": "Signals a desired capability, but also reveals constraints; informs product boundaries."
+    },
+    {
+      "quote": "the fact that that junior person can engage more in the meeting than just sit there typing... that's a massive benefit",
+      "speaker": "Unknown",
+      "summary": "Users want to free juniors to engage with clients rather than type notes.",
+      "significance": "Client experience and training/relationship benefits are key ROI dimensions."
+    }
+  ],
+  "obstacles": [
+    {
+      "quote": "How quickly Nicola can forward it to us.",
+      "speaker": "Unknown",
+      "summary": "Delivery depends on an intermediary forwarding the note.",
+      "significance": "Operational dependency creates delays; suggests need for direct delivery/self-serve access."
+    },
+    {
+      "quote": "So a two hour meeting will be like 80 to 100 pages.",
+      "speaker": "Unknown",
+      "summary": "Transcripts are extremely long for long meetings.",
+      "significance": "Makes review and storage burdensome; motivates summarization and navigation features."
+    },
+    {
+      "quote": "my note just never finished and it cut off after six pages.",
+      "speaker": "Unknown",
+      "summary": "Long-note generation can fail/truncate.",
+      "significance": "Reliability issue blocks trust and reduces willingness to rely on automation."
+    },
+    {
+      "quote": "having to ask the client for permission to use, to process their data in that way.",
+      "speaker": "Unknown",
+      "summary": "Client consent requirement is a workflow blocker.",
+      "significance": "Adoption depends on low-friction, compliant consent handling."
+    },
+    {
+      "quote": "I just didn't want to ask her the question.",
+      "speaker": "Unknown",
+      "summary": "Social awkwardness prevents use in some calls.",
+      "significance": "Even a good product can fail due to social friction; needs better scripts and defaults."
+    },
+    {
+      "quote": "I think it could feel a bit more seamless... depending on the way in which it's delivered.",
+      "speaker": "Unknown",
+      "summary": "Current delivery/integration creates friction.",
+      "significance": "Integration improvements can increase usage and reduce admin overhead."
+    },
+    {
+      "quote": "it says dictated on... because we've not dictated it.",
+      "speaker": "Unknown",
+      "summary": "Template mismatch requires manual edits.",
+      "significance": "Small friction adds up and risks errors; easy improvement."
+    },
+    {
+      "quote": "checking that will take time",
+      "speaker": "Unknown",
+      "summary": "Quality assurance requires time-consuming checking.",
+      "significance": "If review time is high, product ROI declines; need trust and tooling for verification."
+    },
+    {
+      "quote": "Do you know if the cut offs can be triggered by people entering and leaving the meeting?",
+      "speaker": "Unknown",
+      "summary": "Uncertainty about failure triggers creates concern.",
+      "significance": "Users need predictable behavior and transparent diagnostics."
+    },
+    {
+      "quote": "I find that quite distracting.",
+      "speaker": "Unknown",
+      "summary": "The transcription UI distracts in meetings.",
+      "significance": "Can reduce meeting quality; need unobtrusive reassurance mechanisms."
+    },
+    {
+      "quote": "I'm scared to close it in case it stops everything.",
+      "speaker": "Unknown",
+      "summary": "Users lack confidence in what UI actions affect capture.",
+      "significance": "Training/UX clarity needed; system should be robust to UI changes."
+    },
+    {
+      "quote": "it's not always consistent with how it's naming people throughout the notebook",
+      "speaker": "Unknown",
+      "summary": "Name formatting inconsistencies create extra editing steps.",
+      "significance": "Standardization needed; impacts professionalism and trust."
+    },
+    {
+      "quote": "key party names... it's spelled wrong",
+      "speaker": "Unknown",
+      "summary": "Misspelled proper names are common.",
+      "significance": "High-stakes accuracy issue; motivates name dictionaries and validation."
+    },
+    {
+      "quote": "I tried to start the transcript and then it didn't work... the person who sets up the meeting has to do the transcript.",
+      "speaker": "Unknown",
+      "summary": "Teams permission/ownership prevents others from starting transcription.",
+      "significance": "A major integration blocker; needs a clear fix or robust workaround."
+    },
+    {
+      "quote": "My VA often sets up the Teams meetings... If she sets it up, she has to set it up in my name",
+      "speaker": "Unknown",
+      "summary": "Admin scheduling conflicts with transcription control.",
+      "significance": "Role-based workflows require delegated controls and admin-friendly setup."
+    },
+    {
+      "quote": "Sometimes... we go back and forth on what's going in letters... seven different versions",
+      "speaker": "Unknown",
+      "summary": "Decision ambiguity makes it hard to extract definitive action points.",
+      "significance": "Action extraction must handle revisions and identify final decisions."
+    },
+    {
+      "quote": "I'm not sure there's an easy fix for that",
+      "speaker": "Unknown",
+      "summary": "User perceives consent awkwardness as difficult to solve.",
+      "significance": "May require broader trust signals and messaging rather than only product UI changes."
+    },
+    {
+      "quote": "My only issue would be who's who.",
+      "speaker": "Unknown",
+      "summary": "Speaker attribution is hard outside Teams identity context.",
+      "significance": "Limits in-person use cases; informs feature feasibility and roadmap constraints."
+    },
+    {
+      "quote": "everyone's talking over each other, and it's really difficult.",
+      "speaker": "Unknown",
+      "summary": "Overlapping speech creates attribution and accuracy challenges.",
+      "significance": "Need structured meeting capture options or post-edit speaker mapping tools."
+    },
+    {
+      "quote": "clients... would struggle with the idea of... being recorded",
+      "speaker": "Unknown",
+      "summary": "Some clients may refuse recording due to vulnerability/trauma.",
+      "significance": "Consent and domain sensitivity can prevent adoption in certain contexts; requires alternatives."
+    }
+  ],
+  "workarounds": [
+    {
+      "quote": "there'll be potentially young clerks that'll need to edit out in the automated version",
+      "speaker": "Unknown",
+      "summary": "Firms rely on clerks to clean up output.",
+      "significance": "Shows ongoing edit burden; cost shifts to juniors; motivates reducing errors and adding QA tooling."
+    },
+    {
+      "quote": "you can also download a transcript immediately which can also be really helpful",
+      "speaker": "Unknown",
+      "summary": "Users download the transcript as an immediate alternative/fallback.",
+      "significance": "Transcript access is part of the workflow; product should streamline and integrate it."
+    },
+    {
+      "quote": "I used the transcript basically to piece together a terms note",
+      "speaker": "Unknown",
+      "summary": "Users reconstruct missing notes manually from transcripts when notes fail.",
+      "significance": "Painful recovery process implies need for re-run/regenerate features and completeness checks."
+    },
+    {
+      "quote": "I was taking some notes, thankfully.",
+      "speaker": "Unknown",
+      "summary": "Users hedge by taking partial manual notes even when relying on AI.",
+      "significance": "Indicates lack of full trust; reliability improvements could eliminate duplicative work."
+    },
+    {
+      "quote": "I will write messily in handwriting rather than type",
+      "speaker": "Unknown",
+      "summary": "Users handwrite to maintain eye contact and engagement.",
+      "significance": "Reveals context in which AI notes are most valuable (freeing attention)."
+    },
+    {
+      "quote": "Once I'd finished the call, I then had to dictate the note",
+      "speaker": "Unknown",
+      "summary": "When not using AI, users revert to dictation post-call.",
+      "significance": "Baseline workflow to beat; informs ROI and adoption triggers."
+    },
+    {
+      "quote": "I've often given the spiel, like, don't worry, your data's not being held for more than 96 hours",
+      "speaker": "Unknown",
+      "summary": "Users use a verbal reassurance script to obtain consent.",
+      "significance": "Opportunity to standardize messaging and provide client-facing trust materials."
+    },
+    {
+      "quote": "I would rename mine to AI Intendence Note.",
+      "speaker": "Unknown",
+      "summary": "Users manually rename documents to disclose AI usage.",
+      "significance": "Suggests need for auto-labeling in templates and metadata."
+    },
+    {
+      "quote": "I always change that to AI. I always change it to this was typed or this was changed.",
+      "speaker": "Unknown",
+      "summary": "Users manually edit “dictated on” fields to reflect reality.",
+      "significance": "Template automation can remove repetitive edits and reduce mistakes."
+    },
+    {
+      "quote": "I do make a note myself of when the meeting started and ended.",
+      "speaker": "Unknown",
+      "summary": "Users manually capture meeting start/end times.",
+      "significance": "Implied feature gap: auto-capture meeting metadata."
+    },
+    {
+      "quote": "I'll just do a replace all",
+      "speaker": "Unknown",
+      "summary": "Users fix inconsistent naming via find/replace.",
+      "significance": "Shows repetitive cleanup; can be automated via name normalization prompts."
+    },
+    {
+      "quote": "I can just quickly find a replace like all of those entries",
+      "speaker": "Unknown",
+      "summary": "Users correct misspellings with bulk replace in Word.",
+      "significance": "Indicates a need for built-in name QA and correction UI."
+    },
+    {
+      "quote": "I updated our how to guide to make sure everyone knew that.",
+      "speaker": "Unknown",
+      "summary": "User created/updated internal documentation to mitigate setup issues.",
+      "significance": "Workarounds via training suggest product/integration gaps; also indicates internal champion behavior."
+    },
+    {
+      "quote": "now I always try and set up the meeting myself",
+      "speaker": "Unknown",
+      "summary": "Users change scheduling behavior to ensure transcription works.",
+      "significance": "Friction in setup changes operations; better permissions could remove this burden."
+    },
+    {
+      "quote": "I always take out my adjectives... It's more just taking things out.",
+      "speaker": "Unknown",
+      "summary": "Users edit AI output by deleting embellishments.",
+      "significance": "Suggests a “plain style” toggle and reduced creative rewriting."
+    },
+    {
+      "quote": "When I do my own notes and I type my notes, I will put the initial of who's speaking, and every time a new person speaks, I start a new line",
+      "speaker": "Unknown",
+      "summary": "Users use manual speaker-initial formatting to preserve attribution.",
+      "significance": "Implied feature need: speaker-attribution formatting and structured dialogue capture."
+    },
+    {
+      "quote": "I wondered if you could have the transcript temporarily... and then you can purge the transcript",
+      "speaker": "Donal Phipps",
+      "summary": "Proposed workflow workaround: keep transcript only until note is verified, then delete.",
+      "significance": "Highlights retention/verification needs; suggests implementing controlled transcript lifecycle."
+    }
+  ],
+  "background": [
+    {
+      "quote": "Qualitative Feedback Session — Aiphoria Attendance Notes Product",
+      "speaker": "Unknown",
+      "summary": "This is a feedback session about the Aiphoria attendance notes product.",
+      "significance": "Sets context for interpreting comments as product feedback."
+    },
+    {
+      "quote": "Location: Burgess Mee",
+      "speaker": "Unknown",
+      "summary": "The session occurs at the Burgess Mee firm.",
+      "significance": "Provides organizational context (law firm environment)."
+    },
+    {
+      "quote": "Compared to if I did it myself, it would be littered with spelling errors",
+      "speaker": "Unknown",
+      "summary": "Users’ self-written notes often contain spelling errors.",
+      "significance": "Explains why AI’s spelling/structure is valued."
+    },
+    {
+      "quote": "So a two hour meeting will be like 80 to 100 pages.",
+      "speaker": "Unknown",
+      "summary": "Typical meeting length can be up to two hours and produces very long transcripts.",
+      "significance": "Informs scale requirements for processing and usability features."
+    },
+    {
+      "quote": "Sometimes I'm leaving more meetings now, so I'm speaking more in a meeting.",
+      "speaker": "Unknown",
+      "summary": "Users are attending more meetings and participating more actively.",
+      "significance": "Indicates evolving workload and need for passive capture tools."
+    },
+    {
+      "quote": "often I will write messily in handwriting... because I want to have eye contact.",
+      "speaker": "Unknown",
+      "summary": "Users prioritize client rapport; note-taking competes with engagement.",
+      "significance": "Highlights domain expectation for relationship quality and trauma-informed practice."
+    },
+    {
+      "quote": "if you're sharing the note with counsel later",
+      "speaker": "Hannah Coupe",
+      "summary": "Attendance notes are shared with counsel downstream.",
+      "significance": "Defines a key use case: onward sharing and litigation workflow integration."
+    },
+    {
+      "quote": "for a statement as well.",
+      "speaker": "Unknown",
+      "summary": "Notes are used for witness statement drafting.",
+      "significance": "High-stakes legal artifact dependency."
+    },
+    {
+      "quote": "in I guess a liability or insurance point",
+      "speaker": "Unknown",
+      "summary": "Notes serve liability/insurance/defensibility purposes.",
+      "significance": "Increases compliance requirements and demand for traceability."
+    },
+    {
+      "quote": "We have to write a witness statement, we really want it to be in the client's own words.",
+      "speaker": "Unknown",
+      "summary": "Witness statements require client’s own wording.",
+      "significance": "Explains why verbatim capture is crucial and why hallucinations are unacceptable."
+    },
+    {
+      "quote": "Just more on my speed point, when I'm exceptionally busy, I will not have time to dictate notes.",
+      "speaker": "Unknown",
+      "summary": "Workload spikes cause dictation backlogs.",
+      "significance": "Time pressures define the problem severity and adoption timing."
+    },
+    {
+      "quote": "Most clients are just trusting us when we say, your data is secure.",
+      "speaker": "Unknown",
+      "summary": "Clients generally accept reassurance about data security.",
+      "significance": "Indicates consent can be obtained with trust signals; suggests standardized assurances."
+    },
+    {
+      "quote": "your data's not being held for more than 96 hours, I think it is.",
+      "speaker": "Unknown",
+      "summary": "Current retention communicated to clients is ~96 hours.",
+      "significance": "Data retention policy is a key trust component; must be accurate and clearly communicated."
+    },
+    {
+      "quote": "I think this is a good sell with the client... they see it as like a cost savings.",
+      "speaker": "Unknown",
+      "summary": "Client value framing includes cost savings (no extra note taker).",
+      "significance": "Informs client-facing messaging and pricing justification."
+    },
+    {
+      "quote": "an hour meeting can take up to an hour to dictate and then it comes back. You have to check the dictated note.",
+      "speaker": "Unknown",
+      "summary": "Baseline process: dictation + turnaround + checking can equal meeting length.",
+      "significance": "Provides benchmark for time savings claims and adoption ROI."
+    },
+    {
+      "quote": "at the end of a hearing... multi-day hearing",
+      "speaker": "Unknown",
+      "summary": "Use case includes hearings and multi-day litigation events.",
+      "significance": "Shows demand for fast, structured notes under time pressure."
+    },
+    {
+      "quote": "We may be rolling out a co-pilot.",
+      "speaker": "Donal Phipps",
+      "summary": "There is consideration of a co-pilot style interaction for editing/improving output.",
+      "significance": "Product direction context: interactive refinement tools."
+    },
+    {
+      "quote": "I was trained... at a super law firm and I didn't dictate.",
+      "speaker": "Unknown",
+      "summary": "User background includes training in a firm where dictation wasn’t used.",
+      "significance": "Provides lens on inefficiency perceptions and preferred workflows."
+    },
+    {
+      "quote": "When I came to this firm... Why am I reliving the meeting?",
+      "speaker": "Unknown",
+      "summary": "Current firm practice includes dictation, experienced as inefficient by some.",
+      "significance": "Organizational process change opportunity through automation."
+    },
+    {
+      "quote": "I've done them with her but I haven't ever sent them to her to approve of them.",
+      "speaker": "Unknown",
+      "summary": "Notes may be shared with/approved by partners (e.g., Antonio) in some workflows.",
+      "significance": "Indicates internal review/stakeholder constraints and quality expectations."
+    },
+    {
+      "quote": "Withers use a transcript that they then put into CodePilot to create a tenest note.",
+      "speaker": "Unknown",
+      "summary": "Competitor/peer firm workflow uses transcript + Copilot to generate notes.",
+      "significance": "Competitive landscape and alternative solution reference."
+    },
+    {
+      "quote": "IFLG was complaining about the way they do the tenest notes... they do it like a script.",
+      "speaker": "Unknown",
+      "summary": "Another firm’s approach produces script-like notes perceived as unhelpful.",
+      "significance": "Supports differentiation: prose summary vs raw script."
+    },
+    {
+      "quote": "The client pays by the page for councils to read stuff. If it's over 350 pages, it will be a year.",
+      "speaker": "Unknown",
+      "summary": "Counsel reading costs scale with pages; very long bundles are expensive.",
+      "significance": "Document length directly impacts client cost; summarization/conciseness is valuable."
+    },
+    {
+      "quote": "If a case has been going on for two years... What happened... two years ago?",
+      "speaker": "Unknown",
+      "summary": "Notes are used for long-running cases to recall details years later.",
+      "significance": "Long-term retrievability and accuracy are critical; strengthens need for search and archival."
+    },
+    {
+      "quote": "most of our interactions with clients are online. Quite unusual to have an in-person meeting.",
+      "speaker": "Unknown",
+      "summary": "Primary client interactions are online; in-person is rare now.",
+      "significance": "Teams/online integrations are the primary battleground; in-person capture is secondary."
+    },
+    {
+      "quote": "when we started the practice 13 years ago... almost all meetings were in person... really the pandemic... we switched to a lot more online meetings.",
+      "speaker": "Unknown",
+      "summary": "The practice shifted to online meetings due to pandemic-era changes.",
+      "significance": "Explains why Teams-based capture is relevant and likely to remain."
+    },
+    {
+      "quote": "I've made an effort about the whole trauma-informed thing",
+      "speaker": "Unknown",
+      "summary": "Team prioritizes trauma-informed client interactions.",
+      "significance": "Any recording/consent UX must be sensitive and supportive; a core domain requirement."
+    }
+  ],
+  "commitments": [
+    {
+      "quote": "Oh yeah please do, yeah but we...",
+      "speaker": "Donal Phipps",
+      "summary": "Facilitator commits to capturing notes from participants.",
+      "significance": "Shows active documentation process; enables follow-up actions."
+    },
+    {
+      "quote": "Yeah, so I think we can do that, can't we? Yes.",
+      "speaker": "Donal Phipps",
+      "summary": "Facilitator/team acknowledges they can re-run transcripts through the system.",
+      "significance": "Indicates an existing remediation path to operationalize."
+    },
+    {
+      "quote": "If it doesn't produce the note for whatever reason, if you save the transcript, we can send them the transcript and they can run it through the machine again and it will spit out the note.",
+      "speaker": "Donal Phipps",
+      "summary": "Commitment to a recovery process by sending transcript to be reprocessed.",
+      "significance": "This is a concrete support workflow; should be formalized in product/support."
+    },
+    {
+      "quote": "So we have sort of some boilerplate sentences, and we could work with you maybe on pitching that right.",
+      "speaker": "Donal Phipps",
+      "summary": "Facilitator offers to collaborate on client-facing disclosure wording.",
+      "significance": "Indicates willingness to develop consent scripts; an actionable next step."
+    },
+    {
+      "quote": "I updated our how to guide to make sure everyone knew that.",
+      "speaker": "Unknown",
+      "summary": "Participant committed effort to update internal documentation.",
+      "significance": "Signals internal champion and a readiness to support rollout; also indicates pain severe enough to document."
+    },
+    {
+      "quote": "now I always try and set up the meeting myself",
+      "speaker": "Unknown",
+      "summary": "User commits to a behavioral change to ensure the tool works.",
+      "significance": "Shows motivation to use product despite friction; highlights cost of current constraints."
+    },
+    {
+      "quote": "I'll circulate.",
+      "speaker": "Unknown",
+      "summary": "User offers to take on meeting setup responsibility to enable transcription.",
+      "significance": "Operational commitment shows value perception; but indicates product should remove this burden."
+    },
+    {
+      "quote": "I would rename mine to AI Intendence Note.",
+      "speaker": "Unknown",
+      "summary": "User commits to renaming output for disclosure.",
+      "significance": "Shows a compliance workaround; can be automated."
+    }
+  ],
+  "other_notes": [
+    {
+      "quote": "Nom nom nom.",
+      "speaker": "Unknown",
+      "summary": "Informal meeting context and tone.",
+      "significance": "Indicates workshop-style session; not product-related but contextualizes candid feedback."
+    },
+    {
+      "quote": "It's super helpful. It's clippy on steroids.",
+      "speaker": "Unknown",
+      "summary": "A concise comparison to Microsoft Clippy as a supercharged helper.",
+      "significance": "Brand metaphor can inform positioning (“assistant that drafts notes”) and also implies expectations of guidance."
+    },
+    {
+      "quote": "They acknowledged with gusto or something.",
+      "speaker": "Unknown",
+      "summary": "Humorous example illustrating AI’s tendency to embellish minimal responses.",
+      "significance": "Highlights the specific failure mode: invented tone/intent; suggests constraints in generation."
+    },
+    {
+      "quote": "Has the engine changed?",
+      "speaker": "Unknown",
+      "summary": "Users notice and inquire about system version changes.",
+      "significance": "Change management and release notes could improve trust and reactivation."
+    },
+    {
+      "quote": "The model has got almost like a... it always wants to be concise and terse when it can.",
+      "speaker": "Donal Phipps",
+      "summary": "Facilitator explains model behavior contributing to cutoffs.",
+      "significance": "Reveals technical cause; suggests need for output-length enforcement and continuation logic."
+    },
+    {
+      "quote": "we really don't want that happening.",
+      "speaker": "Donal Phipps",
+      "summary": "Team acknowledges truncation is unacceptable.",
+      "significance": "Confirms priority for reliability fixes."
+    },
+    {
+      "quote": "We aim to do that... Like 99.9% of the time we aim to do that",
+      "speaker": "Donal Phipps",
+      "summary": "Target reliability standard is extremely high.",
+      "significance": "Sets performance expectation; informs SLA-like goals and monitoring."
+    },
+    {
+      "quote": "We may be rolling out a co-pilot pop up that enables you to change the names just with an ordinary prompt box.",
+      "speaker": "Donal Phipps",
+      "summary": "Idea of interactive editing via copilot-like prompt.",
+      "significance": "Suggests a potential product direction for post-processing and QA improvements."
+    },
+    {
+      "quote": "I'm pretending to know who you're taking up.",
+      "speaker": "Unknown",
+      "summary": "Humor indicating some confusion/awkwardness in the conversation.",
+      "significance": "Contextual; also underscores awkwardness around asking permission/AI disclosure."
+    },
+    {
+      "quote": "my sense of reluctance on AI is about advice. This isn't advice, we're using it as a tool to create a document",
+      "speaker": "Charlotte Ballard Scott",
+      "summary": "Distinguishes between AI for advice vs AI for documentation; documentation feels less risky.",
+      "significance": "Important for positioning and internal policy: “not legal advice,” administrative assist."
+    },
+    {
+      "quote": "I think it will be an imperfect record. It won't be as good as the ones that we have. Because it's not designed to do that, whereas this is.",
+      "speaker": "Unknown",
+      "summary": "Perception that generic copilots produce inferior notes vs this specialized tool.",
+      "significance": "Differentiation and justification for specialized product versus general-purpose AI."
+    },
+    {
+      "quote": "Because the script will capture the client interrupting themselves... That's really a headache to read. You don't want to put... councils' papers... That's why we prefer prose.",
+      "speaker": "Unknown",
+      "summary": "Users prefer prose summaries over verbatim scripts for readability and cost control.",
+      "significance": "Guides output style: structured prose with selective verbatim quotes, not full script."
+    },
+    {
+      "quote": "Excuse my naivety",
+      "speaker": "Donal Phipps",
+      "summary": "Facilitator frames questions as learning about downstream counsel workflow.",
+      "significance": "Shows opportunity to deepen discovery about counsel integration needs."
+    },
+    {
+      "quote": "I had only thought about attendance notes as a record... But not that it plays a direct role in that interaction.",
+      "speaker": "Donal Phipps",
+      "summary": "Facilitator learned notes are actively used in counsel interactions, not just archival.",
+      "significance": "Expands product use case; features should support counsel sharing and bundles."
+    }
+  ],
+  "feature_requests": [
+    {
+      "quote": "Quicker speed.",
+      "speaker": "Unknown",
+      "feature_title": "Faster Note Turnaround / Speed-to-Usable Output",
+      "underlying_need": "Get a usable attendance note quickly after a meeting without waiting on manual dictation and transcription workflows.",
+      "user_value": "Saves time immediately after meetings; reduces backlog and enables faster next steps and sharing with counsel/clients.",
+      "frequency_signal": "Implied recurring; discussed by multiple participants as time saving and fast turnaround (e.g., “Five minutes.”).",
+      "effort_hint": "No signal",
+      "priority_signals": "Linked to being “exceptionally busy” and reclaiming significant time (15–20 minutes dictation; up to an hour per hour meeting)."
+    },
+    {
+      "quote": "it would be littered with spelling errors where whilst there'll be potentially young clerks that'll need to edit out in the automated version, there won't be all those spelling errors.",
+      "speaker": "Unknown",
+      "feature_title": "Spellcheck-Quality Output / Reduce Typos vs Manual Notes",
+      "underlying_need": "Produce legible, professional notes without common human spelling mistakes.",
+      "user_value": "Reduces editing and embarrassment; improves searchability and client/counsel readiness.",
+      "frequency_signal": "Implied frequent (user’s spelling affects search and drafting).",
+      "effort_hint": "No signal",
+      "priority_signals": "Directly tied to speed and professionalism; mentioned early as core benefit."
+    },
+    {
+      "quote": "And it's searchable, so you can search for words",
+      "speaker": "Unknown",
+      "feature_title": "Searchable Notes and Transcript Access",
+      "underlying_need": "Quickly find key facts/phrases later for drafting and long-running matters.",
+      "user_value": "Faster retrieval, better knowledge management; reduces time wasted deciphering rough notes.",
+      "frequency_signal": "Described as a common issue (“sometimes I search my rough notes...”).",
+      "effort_hint": "No signal",
+      "priority_signals": "Strong practical value; reduces immediate drafting friction."
+    },
+    {
+      "quote": "you can also download a transcript immediately",
+      "speaker": "Unknown",
+      "feature_title": "Immediate Self-Serve Transcript Download",
+      "underlying_need": "Access raw meeting content instantly without relying on an intermediary to forward it.",
+      "user_value": "Enables quick verification and recovery when notes fail; supports drafting and auditability.",
+      "frequency_signal": "Used by at least one participant (“Yes. You use the transcript? Yeah”).",
+      "effort_hint": "Depends on Teams transcript availability and delivery UI.",
+      "priority_signals": "Used as fallback after catastrophic cutoff; high risk-mitigation value."
+    },
+    {
+      "quote": "if it doesn't produce the note for whatever reason, if you save the transcript, we can send them the transcript and they can run it through the machine again and it will spit out the note.",
+      "speaker": "Donal Phipps",
+      "feature_title": "Regenerate Note from Saved Transcript (Self-Serve Re-run)",
+      "underlying_need": "Recover quickly from failed/truncated generation without manual reconstruction.",
+      "user_value": "Avoids lost work and panic; restores trust and reduces support dependency.",
+      "frequency_signal": "Triggered by real incident (“issue in January”).",
+      "effort_hint": "Requires backend job replay from transcript and user-accessible control.",
+      "priority_signals": "Catastrophic failure scenario; users relied on system and it cut off."
+    },
+    {
+      "quote": "it picks out phrases that are exactly what the client said.",
+      "speaker": "Hannah Coupe",
+      "feature_title": "Verbatim Quote Capture Mode (Client Exact Wording)",
+      "underlying_need": "Preserve exact client language for statements, instructions, counsel context, and defensibility.",
+      "user_value": "Improves evidentiary accuracy, drafting quality, and reduces dispute risk.",
+      "frequency_signal": "Mentioned multiple times by multiple speakers (statements, instructions, disputes).",
+      "effort_hint": "Requires tighter grounding to transcript and selective quoting controls.",
+      "priority_signals": "High-stakes: witness statements, complaints, “word for word” needs."
+    },
+    {
+      "quote": "sometimes I do find it adds in things that they didn't necessarily say",
+      "speaker": "Hannah Coupe",
+      "feature_title": "Hallucination Reduction / Grounded Summaries Only",
+      "underlying_need": "Ensure the note never invents facts, acknowledgements, or emotions not stated.",
+      "user_value": "Reduces liability, improves trust, and decreases verification time.",
+      "frequency_signal": "Recurring (“sometimes”).",
+      "effort_hint": "May require retrieval-grounded generation with citation to transcript spans.",
+      "priority_signals": "Directly impacts trust; blocks use for defensibility and statements."
+    },
+    {
+      "quote": "it adds a sentence when the client might have just said yes.",
+      "speaker": "Hannah Coupe",
+      "feature_title": "Minimal-Response Handling (Don’t Embellish)",
+      "underlying_need": "Represent short responses faithfully without adding interpretive content.",
+      "user_value": "Improves accuracy and defensibility; reduces edit/deletion work.",
+      "frequency_signal": "No explicit frequency; given as a concrete repeated pattern.",
+      "effort_hint": "Prompting/style rules + model constraints.",
+      "priority_signals": "Tied to inability to trust what was actually said."
+    },
+    {
+      "quote": "I would rename mine to AI Intendence Note. So that's something we can think about building into the template.",
+      "speaker": "Unknown",
+      "feature_title": "Auto-Label Output as AI-Generated (Template Header/Metadata)",
+      "underlying_need": "Provide transparent disclosure and correct metadata without manual renaming/editing.",
+      "user_value": "Saves time, reduces risk of misleading headers (“dictated”), supports compliance and client trust.",
+      "frequency_signal": "At least two users do manual edits (“I always change that to AI.”).",
+      "effort_hint": "Template change; low complexity.",
+      "priority_signals": "Repeated manual workaround; directly linked to client-facing sharing and compliance."
+    },
+    {
+      "quote": "at the top it says dictated on, but I feel like we need to change that because we've not dictated it.",
+      "speaker": "Unknown",
+      "feature_title": "Replace “Dictated on” with Accurate Capture Language",
+      "underlying_need": "Ensure documents reflect the actual method of creation (AI transcription) for accuracy and professionalism.",
+      "user_value": "Avoids misleading records; reduces repetitive manual edits.",
+      "frequency_signal": "Multiple users mention changing it.",
+      "effort_hint": "Low (template field change).",
+      "priority_signals": "Easy win; clear correctness issue."
+    },
+    {
+      "quote": "it could say when the meeting... started and ended.",
+      "speaker": "Unknown",
+      "feature_title": "Auto-Include Meeting Start/End Times",
+      "underlying_need": "Record standardized meeting metadata without manual note-taking.",
+      "user_value": "Improves file completeness and consistency; saves time; supports auditing.",
+      "frequency_signal": "User says they always note it themselves.",
+      "effort_hint": "Requires pulling meeting metadata from Teams or user entry.",
+      "priority_signals": "High because it’s part of their standard note structure."
+    },
+    {
+      "quote": "What about participants to the meeting?",
+      "speaker": "Unknown",
+      "feature_title": "Auto-Include Participants List (Including Roles)",
+      "underlying_need": "Accurately document who attended without manual entry, especially for compliance and clarity.",
+      "user_value": "Reduces omissions; improves defensibility and context for counsel.",
+      "frequency_signal": "Raised in group discussion; multiple voices.",
+      "effort_hint": "Teams participants metadata integration.",
+      "priority_signals": "Important for speaker attribution and record integrity."
+    },
+    {
+      "quote": "if for example when we've done calls together... it doesn't know that I'm speaking... if that thing we've joined from your computer",
+      "speaker": "Unknown",
+      "feature_title": "Multi-Speaker on One Device Attribution/Participant Mapping",
+      "underlying_need": "Correctly identify multiple speakers even when audio comes from one Teams connection/device.",
+      "user_value": "Improves accuracy of “who said what,” reduces confusion and editing, increases defensibility.",
+      "frequency_signal": "Occurs in joint calls; implied recurring.",
+      "effort_hint": "Harder: requires manual participant mapping UI or voice diarization within a device.",
+      "priority_signals": "Directly impacts accuracy; users flag it as a known limitation."
+    },
+    {
+      "quote": "what would be ideal is you press one button on a taskbar within Teams, it starts here and then there's some indicator... that says it's still working in the background.",
+      "speaker": "Unknown",
+      "feature_title": "In-Meeting One-Click Start + Clear Recording/Processing Status Indicator",
+      "underlying_need": "Know reliably that capture is active without keeping distracting transcript sidebar open.",
+      "user_value": "Reduces anxiety and distraction; increases meeting quality and adoption.",
+      "frequency_signal": "At least two users share the same behavior and need (“No, I have the same thing.”).",
+      "effort_hint": "Requires Teams app UX/integration; status sync to backend jobs.",
+      "priority_signals": "Strong emotional signal (“I'm scared to close it... I'm nervous”)."
+    },
+    {
+      "quote": "I'm scared to close it in case it stops everything. You can close it. I've been told you can close it, but I'm still too scared.",
+      "speaker": "Unknown",
+      "feature_title": "Non-Disruptive UI Controls + Reassurance that Closing Sidebar Won’t Stop Capture",
+      "underlying_need": "Confidence that UI actions don’t break recording/transcription.",
+      "user_value": "Less distraction; fewer user errors; higher trust.",
+      "frequency_signal": "Corroborated by another user.",
+      "effort_hint": "UX + education + potentially technical decoupling of UI from capture process.",
+      "priority_signals": "High anxiety and behavior change indicates high priority."
+    },
+    {
+      "quote": "I find that quite distracting.",
+      "speaker": "Unknown",
+      "feature_title": "Low-Distraction Capture Experience",
+      "underlying_need": "Maintain focus and eye contact while still confirming capture is happening.",
+      "user_value": "Improves client rapport and trauma-informed practice; reduces cognitive load.",
+      "frequency_signal": "At least two users discuss distraction and visual prompts.",
+      "effort_hint": "UX work in Teams or companion app overlay.",
+      "priority_signals": "Directly impacts meeting experience; ties to core benefit promise."
+    },
+    {
+      "quote": "it's used interchangeably, HANA and then HC, and that has happened quite a few times.",
+      "speaker": "Unknown",
+      "feature_title": "Consistent Name Formatting (Initials vs Names)",
+      "underlying_need": "Standardized, predictable references to people throughout the note.",
+      "user_value": "Less editing; avoids confusion and professionalism issues.",
+      "frequency_signal": "“quite a few times.”",
+      "effort_hint": "Post-processing normalization rules; participant dictionary.",
+      "priority_signals": "Frequent annoyance; quick fix saves time and prevents errors."
+    },
+    {
+      "quote": "With like key party names... it's spelled wrong",
+      "speaker": "Unknown",
+      "feature_title": "Proper Noun Accuracy + Name Dictionary/Validation",
+      "underlying_need": "Ensure client/party names are spelled correctly, especially repeated names.",
+      "user_value": "Prevents embarrassment and trust loss; reduces editing and risk.",
+      "frequency_signal": "Described as common (“often”).",
+      "effort_hint": "Could use custom glossary per matter + UI for corrections.",
+      "priority_signals": "“It's a bad look” + “high risk of sending... names spelt wrong.”"
+    },
+    {
+      "quote": "a macro that flags all the proper names and gives you the opportunity to change them, like a pop-up box",
+      "speaker": "Unknown",
+      "feature_title": "Name QA Tool (Flag Proper Names + Guided Corrections)",
+      "underlying_need": "Quickly review and correct all names before sharing externally.",
+      "user_value": "Reduces missed errors; speeds review; improves trust.",
+      "frequency_signal": "Implied needed regularly due to frequent misspellings/inconsistencies.",
+      "effort_hint": "NLP entity extraction + UI workflow; Word add-in possible.",
+      "priority_signals": "Directly tied to risk of sending unreviewed long notes."
+    },
+    {
+      "quote": "Sometimes it might come up with like a random string of numbers and letters that's in the corner of one of, that's the name of one of the team's participants.",
+      "speaker": "Unknown",
+      "feature_title": "Clean Participant Identification (Avoid Random IDs)",
+      "underlying_need": "Replace confusing system identifiers with human-readable participant names.",
+      "user_value": "Improves readability and professionalism; reduces cleanup.",
+      "frequency_signal": "Occurs sometimes.",
+      "effort_hint": "Teams identity mapping + sanitation logic.",
+      "priority_signals": "Professionalism risk; easy to mess up in client-facing notes."
+    },
+    {
+      "quote": "it can feel seamless using it. I think it could feel a bit more seamless... depending on the way in which it's delivered.",
+      "speaker": "Unknown",
+      "feature_title": "More Seamless Delivery Workflow (Reduce Reliance on Forwarding)",
+      "underlying_need": "Receive notes directly and predictably without intermediary steps or delays.",
+      "user_value": "Faster access; fewer coordination points; better habit formation.",
+      "frequency_signal": "Delivery currently depends on “how quickly Nicola can forward it to us.”",
+      "effort_hint": "Email automation, Teams/SharePoint delivery, matter system integration (not specified).",
+      "priority_signals": "Seamlessness called out as a differentiator; impacts daily use."
+    },
+    {
+      "quote": "the issue I had was... Pete, you set up the meeting, but then I tried to start the transcript and then it didn't work... the person who sets up the meeting has to do the transcript.",
+      "speaker": "Unknown",
+      "feature_title": "Allow Non-Organizer to Start Transcription/Attendance Capture",
+      "underlying_need": "Enable the actual meeting attendee/lawyer to start capture even if someone else scheduled the meeting.",
+      "user_value": "Reduces scheduling friction; supports VA-set meetings; increases adoption.",
+      "frequency_signal": "Happened at least once and led to updating a guide + behavior change.",
+      "effort_hint": "Teams permissions/admin policy; integration work.",
+      "priority_signals": "Caused avoidance and workaround (“now I always try and set up the meeting myself”)."
+    },
+    {
+      "quote": "anyone within the BurgessMe environment can press the relevant button... It doesn't have to be confined to just the meeting.",
+      "speaker": "Unknown",
+      "feature_title": "Teams “Attendance Note” Button Accessible to Authorized Attendees",
+      "underlying_need": "Simple, role-based control to start/stop capture within Teams regardless of organizer.",
+      "user_value": "Fewer failed setups; faster start; reduces need to resend links.",
+      "frequency_signal": "Supported by multiple examples (VA scheduling; organizer mismatch).",
+      "effort_hint": "Teams app permissioning; tenant-wide configuration.",
+      "priority_signals": "High operational friction; impacts many meetings."
+    },
+    {
+      "quote": "I find sometimes it's almost too good, like it's too formal.",
+      "speaker": "Unknown",
+      "feature_title": "Tone/Style Controls (Less Formal, More Plain Speech)",
+      "underlying_need": "Match firm’s preferred attendance note style and reflect actual conversation tone.",
+      "user_value": "Less editing; better authenticity; improved defensibility.",
+      "frequency_signal": "Described as “fairly universal” later.",
+      "effort_hint": "Prompt templates + style profiles per firm/user.",
+      "priority_signals": "Multiple users agree; impacts every note."
+    },
+    {
+      "quote": "There's lots of random verbs that are quite descriptive... And it makes it longer.",
+      "speaker": "Unknown",
+      "feature_title": "Conciseness Controls (Reduce Verbosity/Descriptive Verbs)",
+      "underlying_need": "Keep notes concise to reduce reading time and costs (counsel per-page).",
+      "user_value": "Shorter documents; faster review; lower counsel costs.",
+      "frequency_signal": "Comes up in style critique; connected to counsel page-cost discussion.",
+      "effort_hint": "Prompting and summarization constraints; section length limits.",
+      "priority_signals": "Length affects downstream costs; repeated complaints about “too formal” and long."
+    },
+    {
+      "quote": "trying to use the client's words, but if they say something that's too colloquial, then you can sort of adapt it to sound more professional.",
+      "speaker": "Unknown",
+      "feature_title": "Selective Verbatim vs Professionalization Setting",
+      "underlying_need": "Balance authenticity (client words) with professional tone where needed.",
+      "user_value": "Improved readability without losing key phrasing; reduces manual rewriting.",
+      "frequency_signal": "Discussed multiple times (client own words vs prose).",
+      "effort_hint": "Rule-based quoting and paraphrase thresholds.",
+      "priority_signals": "Central to statement/instructions use cases."
+    },
+    {
+      "quote": "there's also like a question of tense and what tense we'd want",
+      "speaker": "Unknown",
+      "feature_title": "Enforce Consistent Tense (e.g., Past Tense)",
+      "underlying_need": "Match firm/user drafting conventions to reduce stylistic cleanup.",
+      "user_value": "Less editing; consistent records.",
+      "frequency_signal": "At least two users discuss tense preference (past vs present).",
+      "effort_hint": "Prompting and post-processing grammar rules.",
+      "priority_signals": "Noted as “strong feeling” when noticed; affects perceived quality."
+    },
+    {
+      "quote": "Would it be helpful for the note to create an action point list out of the end? That would be so helpful.",
+      "speaker": "Unknown",
+      "feature_title": "Automatic Action Points / To‑Do List Extraction",
+      "underlying_need": "Capture clear next steps and tasks that lawyers typically derive during dictation/reflection.",
+      "user_value": "Prevents missed tasks; supports workflow management; saves time.",
+      "frequency_signal": "User notes consistent behavior (“I'll always type AP”).",
+      "effort_hint": "Summarization + task extraction; may need custom definitions and resolution of conflicting drafts.",
+      "priority_signals": "Strong enthusiasm; also addresses a “lost value” of dictation."
+    },
+    {
+      "quote": "In Zoom, their standardized note-taker summarizes what's been discussed and creates an action. It does a little bit of a list",
+      "speaker": "Unknown",
+      "feature_title": "Competitive-Style Summary + Action List Output",
+      "underlying_need": "Get structured summaries and action lists similar to Zoom note taker but tailored for legal specificity.",
+      "user_value": "Competitive parity and improved productivity.",
+      "frequency_signal": "Referenced as existing known capability in other tool.",
+      "effort_hint": "Prompt template updates; perhaps multi-section outputs.",
+      "priority_signals": "Comparison implies expectation and urgency."
+    },
+    {
+      "quote": "Sometimes when Esther sends us the summaries, that's insane.",
+      "speaker": "Unknown",
+      "feature_title": "High-Quality Auto-Summaries for Internal Use",
+      "underlying_need": "Receive strong, succinct summaries that reduce time reading long outputs.",
+      "user_value": "Faster comprehension; better handoffs.",
+      "frequency_signal": "Implied recurring with Esther’s summaries.",
+      "effort_hint": "Summarization tuning and output formats.",
+      "priority_signals": "“that's insane” indicates strong positive reaction."
+    },
+    {
+      "quote": "I think we'd have to find a way of integrating it and talking to clients about it without it feeling awkward.",
+      "speaker": "Unknown",
+      "feature_title": "Client Consent/Disclosure Workflow (Less Awkward)",
+      "underlying_need": "Ask permission and explain AI data processing in a natural, trust-building way.",
+      "user_value": "Higher adoption; fewer skipped recordings; better client experience.",
+      "frequency_signal": "Barrier occurred in “two client calls in the last two days.”",
+      "effort_hint": "Requires scripts, templates, possibly client-facing materials and UX prompts.",
+      "priority_signals": "Directly caused non-use; adoption-critical."
+    },
+    {
+      "quote": "I don't know whether there's a way of having some sort of trust certificate with clients about their data processing.",
+      "speaker": "Unknown",
+      "feature_title": "Client-Facing Trust Certificate / Security Assurance Pack",
+      "underlying_need": "Provide credible, standardized proof of security/compliance to build client confidence.",
+      "user_value": "Easier consent; reduced objections; supports sensitive/vulnerable client contexts.",
+      "frequency_signal": "No count, but framed as necessary for trust.",
+      "effort_hint": "Compliance work (ISO, documentation), distribution UI.",
+      "priority_signals": "Mentioned as “would have to be true” to increase trust."
+    },
+    {
+      "quote": "This is ISO, whatever it is, compliance, etc.",
+      "speaker": "Unknown",
+      "feature_title": "Surface Compliance Credentials (e.g., ISO) in Client Materials",
+      "underlying_need": "Demonstrate strong compliance posture for regulated legal data processing.",
+      "user_value": "Improves credibility; reduces perceived risk.",
+      "frequency_signal": "No signal",
+      "effort_hint": "Requires certifications and ongoing audit; non-trivial.",
+      "priority_signals": "Presented as prerequisite to confidence."
+    },
+    {
+      "quote": "I wondered if you could have the transcript temporarily... and then you can purge the transcript",
+      "speaker": "Donal Phipps",
+      "feature_title": "Transcript Retention Controls (Keep Until Verified, Then Purge)",
+      "underlying_need": "Enable verification while minimizing long-term storage of raw transcripts and context risk.",
+      "user_value": "Balances auditability with privacy and file hygiene; reduces risk of misuse/out-of-context transcript.",
+      "frequency_signal": "Discussed as a general desired workflow.",
+      "effort_hint": "Requires lifecycle management, delete workflows, and policy configuration.",
+      "priority_signals": "Addresses both privacy concern and verification need."
+    },
+    {
+      "quote": "It shouldn't be... basically there is additional checks to make sure that it's complete.",
+      "speaker": "Donal Phipps",
+      "feature_title": "Completeness Checks to Prevent Cutoffs",
+      "underlying_need": "Guarantee full note generation for long meetings.",
+      "user_value": "Prevents catastrophic failures; increases trust.",
+      "frequency_signal": "Cutoffs occurred at least once; facilitator says issues still “occasionally.”",
+      "effort_hint": "Backend orchestration improvements and monitoring.",
+      "priority_signals": "Reliability framed as critical; “we really don't want that happening.”"
+    },
+    {
+      "quote": "a bit like find and replace, where you might be able to give tweaks to the AI model and say, not bad, but please correct these names",
+      "speaker": "Donal Phipps",
+      "feature_title": "Interactive Feedback/Correction Loop (Teach the Model per Matter)",
+      "underlying_need": "Quickly refine outputs (names, style) without manual edits each time.",
+      "user_value": "Less repeated editing; higher accuracy over time.",
+      "frequency_signal": "Implied ongoing need due to repeated name/style issues.",
+      "effort_hint": "Requires UI + persistence of corrections (glossary/style memory).",
+      "priority_signals": "Addresses high-risk errors (names) and recurring annoyance."
+    }
+  ],
+  "overall_sentiment": "Overall sentiment is cautiously positive: users describe the system as “super helpful,” fast, and capable of producing polished, searchable notes that can be used for counsel and client-facing workflows. However, trust is fragile due to reliability failures (cutoffs), occasional hallucinated/embellished content, awkward client-consent conversations, and recurring cleanup issues (names, tone, template metadata).",
+  "key_themes": [
+    "Reliability and completeness are gating factors for trust",
+    "Verbatim fidelity and defensibility (client exact words, no embellishment)",
+    "Time savings vs dictation and reduced backlog during busy periods",
+    "Need for clearer in-meeting status/progress indicators to reduce anxiety and distraction",
+    "Template and style standardization (tone, verbs/adjectives, tense, metadata fields)",
+    "Proper-name accuracy and participant attribution",
+    "Consent/disclosure and client trust materials for data processing",
+    "Downstream workflows: counsel sharing, witness statements, long-running matters",
+    "Action points/to-do extraction to replace reflective value of dictation"
+  ],
+  "recommended_actions": [
+    "Prioritize eliminating truncation/cutoff failures with strong completeness checks, automatic continuation, and monitoring/alerts for long meetings.",
+    "Add an in-Teams status indicator (and/or one-click control) that confirms capture is active and note generation is progressing, so users can close the transcript sidebar confidently.",
+    "Implement a self-serve “regenerate note from transcript” button and guided recovery flow when generation fails.",
+    "Create a strict grounding mode that prevents adding content not present in transcript; optionally provide citations/links to transcript spans for key statements and quotes.",
+    "Add configurable style profiles (e.g., Plain/Prose/Verbatim-heavy) with controls to reduce formality, descriptive verbs, and adjectives; enforce consistent tense (e.g., past tense) per firm preference.",
+    "Fix template metadata: replace “Dictated on” with accurate wording; auto-label documents as AI-generated; optionally include boilerplate disclosure text.",
+    "Auto-capture and insert meeting metadata (start/end time, participants) from Teams, with support for correcting multi-speaker-on-one-device attribution.",
+    "Build a proper-noun QA workflow: extract/flag names, propose corrections, allow user to confirm once, and apply consistently throughout the document (and across future notes for the matter).",
+    "Address Teams permission constraints so authorized attendees (not only meeting organizers) can start transcription/attendance capture; support admin/VA scheduling workflows without link re-issuance.",
+    "Add an “Action Points” section with configurable specificity, plus a mechanism to reconcile ambiguous/iterative decisions (e.g., mark as ‘options discussed’ vs ‘agreed actions’).",
+    "Provide client-facing consent materials: short script, email wording, and a trust/security pack (retention period, certifications) to reduce awkwardness and increase adoption—especially for sensitive/vulnerable clients.",
+    "Offer transcript retention controls: keep transcript until note is verified, then purge per policy; make this workflow explicit to reduce context/privacy concerns."
+  ],
+  "_metadata": {
+    "timestamp": "2026-02-19T14:03:33.320859",
+    "model": "gpt-5.2",
+    "transcript_file": "transcript.txt",
+    "transcript_length_chars": 42979
+  }
+}

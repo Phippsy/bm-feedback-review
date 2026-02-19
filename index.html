@@ -1,0 +1,1800 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Burgess Mee — Feedback & Feature Priorities</title>
+    <style>
+      /* ======== RESET & VARIABLES ======== */
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --bg: #f8fafc;
+        --card-bg: #ffffff;
+        --text: #1e293b;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+        --accent: #2563eb;
+        --accent-light: #dbeafe;
+        --yellow: #eab308;
+        --yellow-light: #fefce8;
+        --yellow-border: #fde68a;
+        --green: #22c55e;
+        --red: #ef4444;
+        --orange: #f97316;
+      }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      /* ======== HEADER ======== */
+      .header {
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        color: white;
+        padding: 1.5rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .header-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .header-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .header-logo {
+        height: 2.25rem;
+        border-radius: 0.375rem;
+      }
+      .header h1 {
+        font-size: 1.375rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+      .header .subtitle {
+        color: #94a3b8;
+        font-size: 0.8125rem;
+        margin-top: 0.125rem;
+      }
+
+      /* ======== NAV PILLS ======== */
+      .nav-pills {
+        display: flex;
+        gap: 0.25rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 0.5rem;
+        padding: 0.25rem;
+      }
+      .nav-pill {
+        padding: 0.5rem 1rem;
+        border: none;
+        background: transparent;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.8125rem;
+        font-weight: 600;
+        border-radius: 0.375rem;
+        cursor: pointer;
+        transition: all 0.15s;
+        white-space: nowrap;
+      }
+      .nav-pill:hover {
+        color: white;
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .nav-pill.active {
+        color: white;
+        background: var(--accent);
+      }
+
+      /* ======== MAIN ======== */
+      .main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+      .page-section {
+        display: none;
+      }
+      .page-section.active {
+        display: block;
+      }
+
+      /* ======== VOTER IDENTITY BAR ======== */
+      .identity-bar {
+        background: var(--accent-light);
+        border: 1px solid #93c5fd;
+        border-radius: 0.75rem;
+        padding: 1rem 1.5rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .identity-bar label {
+        font-weight: 600;
+        font-size: 0.875rem;
+        color: var(--accent);
+      }
+      .identity-input {
+        padding: 0.5rem 0.75rem;
+        border: 2px solid #93c5fd;
+        border-radius: 0.5rem;
+        font-size: 0.875rem;
+        flex: 1;
+        min-width: 12rem;
+        font-family: inherit;
+        outline: none;
+        max-width: 20rem;
+        display: none;
+      }
+      .identity-input:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+      }
+      .identity-hint {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+      }
+      .name-chips {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        flex: 1;
+      }
+      .name-chip {
+        padding: 0.45rem 1rem;
+        border: 2px solid #93c5fd;
+        border-radius: 2rem;
+        background: #fff;
+        font-size: 0.85rem;
+        font-family: inherit;
+        cursor: pointer;
+        transition: all 0.15s ease;
+        color: var(--accent);
+        font-weight: 500;
+      }
+      .name-chip:hover {
+        background: var(--accent-light);
+        border-color: var(--accent);
+      }
+      .name-chip.selected {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+      .identity-selected {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--accent);
+        display: none;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .identity-selected .change-btn {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        cursor: pointer;
+        text-decoration: underline;
+        font-weight: 400;
+      }
+
+      /* ======== FEATURE CARDS — SCANNABLE LIST ======== */
+      .feature-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .feature-item {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--yellow);
+        border-radius: 0.75rem;
+        padding: 1.25rem 1.5rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        transition: all 0.15s ease;
+      }
+      .feature-item:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+      .feature-item.priority-top {
+        border-left-color: var(--red);
+        background: #fef2f2;
+      }
+      .feature-item.priority-high {
+        border-left-color: var(--orange);
+        background: #fff7ed;
+      }
+
+      .feature-item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      .feature-item-title {
+        font-size: 1rem;
+        font-weight: 700;
+      }
+      .feature-item-speaker {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        background: #f1f5f9;
+        color: #475569;
+        padding: 0.125rem 0.5rem;
+        border-radius: 0.375rem;
+        white-space: nowrap;
+      }
+      .feature-item-quote {
+        font-style: italic;
+        color: #78716c;
+        font-size: 0.8125rem;
+        border-left: 3px solid var(--yellow-border);
+        padding-left: 0.75rem;
+        margin-bottom: 0.75rem;
+        line-height: 1.5;
+      }
+      .feature-item-need {
+        font-size: 0.8125rem;
+        color: var(--text);
+        margin-bottom: 0.75rem;
+        line-height: 1.4;
+      }
+      .feature-item-need strong {
+        color: var(--text-muted);
+        font-size: 0.6875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        display: block;
+        margin-bottom: 0.2rem;
+      }
+
+      /* Expandable details */
+      .feature-expand {
+        margin-top: 0.5rem;
+      }
+      .feature-expand-toggle {
+        font-size: 0.75rem;
+        color: var(--accent);
+        cursor: pointer;
+        background: none;
+        border: none;
+        font-weight: 600;
+        font-family: inherit;
+        padding: 0.25rem 0;
+      }
+      .feature-expand-toggle:hover {
+        text-decoration: underline;
+      }
+      .feature-expand-body {
+        display: none;
+        margin-top: 0.75rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+      }
+      .feature-expand-body.collapsed {
+        display: none;
+      }
+      .feature-expand-body.expanded {
+        display: grid;
+      }
+      .fd-box {
+        background: var(--yellow-light);
+        border-radius: 0.375rem;
+        padding: 0.5rem 0.625rem;
+      }
+      .fd-box.full-width {
+        grid-column: 1 / -1;
+      }
+      .fd-box-label {
+        font-size: 0.625rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #92400e;
+        margin-bottom: 0.125rem;
+      }
+      .fd-box-value {
+        font-size: 0.75rem;
+        color: var(--text);
+        line-height: 1.35;
+      }
+
+      /* ======== PRIORITY VOTING BUTTONS ======== */
+      .priority-btns {
+        display: flex;
+        gap: 0.375rem;
+      }
+      .priority-btn {
+        padding: 0.375rem 0.75rem;
+        border-radius: 2rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        cursor: pointer;
+        border: 2px solid var(--border);
+        background: var(--card-bg);
+        color: var(--text-muted);
+        transition: all 0.15s;
+        font-family: inherit;
+        white-space: nowrap;
+      }
+      .priority-btn:hover {
+        border-color: #94a3b8;
+      }
+      .priority-btn.selected-top {
+        background: var(--red);
+        color: white;
+        border-color: var(--red);
+      }
+      .priority-btn.selected-high {
+        background: var(--orange);
+        color: white;
+        border-color: var(--orange);
+      }
+
+      /* ======== SUBMIT VOTES ======== */
+      .vote-actions {
+        position: sticky;
+        bottom: 0;
+        background: var(--card-bg);
+        border-top: 2px solid var(--border);
+        padding: 1rem 1.5rem;
+        margin: 0 -2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+        z-index: 50;
+      }
+      .vote-summary {
+        font-size: 0.875rem;
+        color: var(--text-muted);
+      }
+      .vote-summary strong {
+        color: var(--text);
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.625rem 1.25rem;
+        border-radius: 0.5rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.15s ease;
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: white;
+      }
+      .btn-primary:hover {
+        background: #1d4ed8;
+      }
+      .btn-primary:disabled {
+        background: #94a3b8;
+        cursor: not-allowed;
+      }
+      .btn-outline-dark {
+        background: transparent;
+        color: var(--text);
+        border: 1px solid var(--border);
+      }
+      .btn-outline-dark:hover {
+        background: #f1f5f9;
+      }
+      .btn-sm {
+        padding: 0.375rem 0.75rem;
+        font-size: 0.75rem;
+      }
+
+      /* ======== TEAM VOTES (hidden by default) ======== */
+      .team-votes-toggle {
+        margin-top: 1.5rem;
+        text-align: center;
+      }
+      .team-votes-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.8125rem;
+        margin-top: 0.75rem;
+      }
+      .team-votes-table th,
+      .team-votes-table td {
+        padding: 0.5rem 0.75rem;
+        text-align: left;
+        border-bottom: 1px solid var(--border);
+      }
+      .team-votes-table th {
+        font-size: 0.6875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--text-muted);
+        font-weight: 700;
+      }
+      .priority-badge {
+        display: inline-block;
+        padding: 0.125rem 0.5rem;
+        border-radius: 1rem;
+        font-size: 0.6875rem;
+        font-weight: 700;
+      }
+      .priority-badge.top {
+        background: #fecaca;
+        color: #991b1b;
+      }
+      .priority-badge.high {
+        background: #fed7aa;
+        color: #9a3412;
+      }
+
+      /* ======== FEEDBACK TABS ======== */
+      .tab-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+        margin-bottom: 1.5rem;
+        border-bottom: 2px solid var(--border);
+      }
+      .tab-btn {
+        padding: 0.5rem 0.875rem;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        border-bottom: 2px solid transparent;
+        margin-bottom: -2px;
+        transition: all 0.15s;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        font-family: inherit;
+      }
+      .tab-btn:hover {
+        color: var(--text);
+      }
+      .tab-btn.active {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+      }
+      .tab-btn .badge {
+        background: #e2e8f0;
+        color: var(--text-muted);
+        font-size: 0.625rem;
+        padding: 0.0625rem 0.375rem;
+        border-radius: 1rem;
+        font-weight: 700;
+      }
+      .tab-btn.active .badge {
+        background: var(--accent-light);
+        color: var(--accent);
+      }
+
+      .cat-panel {
+        display: none;
+      }
+      .cat-panel.active {
+        display: block;
+      }
+      .cat-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+      .cat-header h3 {
+        font-size: 1.125rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      /* ======== FEEDBACK CARDS ======== */
+      .fb-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        gap: 1rem;
+      }
+      .fb-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 0.75rem;
+        padding: 1.125rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        border-left: 4px solid var(--card-accent, var(--accent));
+        transition: box-shadow 0.15s;
+      }
+      .fb-card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+      .fb-quote {
+        font-style: italic;
+        margin-bottom: 0.625rem;
+        line-height: 1.5;
+        padding-left: 0.75rem;
+        border-left: 3px solid var(--border);
+        font-size: 0.875rem;
+      }
+      .fb-meta {
+        display: grid;
+        gap: 0.375rem;
+      }
+      .fb-meta-row {
+        display: flex;
+        gap: 0.5rem;
+        align-items: flex-start;
+      }
+      .fb-meta-label {
+        font-size: 0.625rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--text-muted);
+        min-width: 5rem;
+        padding-top: 0.125rem;
+      }
+      .fb-meta-val {
+        font-size: 0.8125rem;
+      }
+      .fb-speaker {
+        display: inline-block;
+        background: #f1f5f9;
+        color: #475569;
+        padding: 0.125rem 0.5rem;
+        border-radius: 0.375rem;
+        font-size: 0.6875rem;
+        font-weight: 600;
+      }
+
+      /* ======== ANNOTATION INPUT ======== */
+      .annotation-area {
+        margin-top: 0.75rem;
+        border-top: 1px dashed var(--border);
+        padding-top: 0.625rem;
+      }
+      .annotation-toggle {
+        font-size: 0.6875rem;
+        color: var(--accent);
+        cursor: pointer;
+        background: none;
+        border: none;
+        font-weight: 600;
+        font-family: inherit;
+      }
+      .annotation-toggle:hover {
+        text-decoration: underline;
+      }
+      .annotation-form {
+        display: none;
+        margin-top: 0.5rem;
+      }
+      .annotation-form.open {
+        display: block;
+      }
+      .annotation-input {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid var(--border);
+        border-radius: 0.375rem;
+        font-size: 0.8125rem;
+        font-family: inherit;
+        resize: vertical;
+        min-height: 2.5rem;
+      }
+      .annotation-input:focus {
+        border-color: var(--accent);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      }
+      .annotation-submit-row {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 0.375rem;
+        align-items: center;
+      }
+
+      .existing-annotations {
+        margin-top: 0.5rem;
+      }
+      .annotation-note {
+        background: #f0fdf4;
+        border-left: 3px solid var(--green);
+        padding: 0.375rem 0.625rem;
+        border-radius: 0.25rem;
+        font-size: 0.75rem;
+        margin-bottom: 0.375rem;
+      }
+      .annotation-note .an-author {
+        font-weight: 700;
+        color: #166534;
+      }
+      .annotation-note .an-time {
+        color: var(--text-muted);
+        font-size: 0.625rem;
+        margin-left: 0.5rem;
+      }
+
+      /* ======== SENTIMENT & THEMES (overview section) ======== */
+      .sentiment-banner {
+        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+        border: 1px solid #bfdbfe;
+        border-radius: 0.75rem;
+        padding: 1.25rem 1.5rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.9375rem;
+        color: #1e40af;
+      }
+      .sentiment-banner strong {
+        display: block;
+        margin-bottom: 0.375rem;
+        font-size: 1rem;
+      }
+      .section-box {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 0.75rem;
+        padding: 1.25rem 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      }
+      .section-box-title {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .chip {
+        display: inline-block;
+        background: var(--accent-light);
+        color: var(--accent);
+        padding: 0.3rem 0.75rem;
+        border-radius: 2rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+      .chip-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.375rem;
+      }
+      .action-ol {
+        list-style: none;
+        counter-reset: a;
+      }
+      .action-ol li {
+        counter-increment: a;
+        padding: 0.625rem 0;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        gap: 0.625rem;
+        align-items: flex-start;
+        font-size: 0.875rem;
+      }
+      .action-ol li:last-child {
+        border-bottom: none;
+      }
+      .action-ol li::before {
+        content: counter(a);
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        background: var(--accent);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.6875rem;
+        font-weight: 700;
+      }
+
+      /* ======== AGGREGATE RESULTS ======== */
+      .agg-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.8125rem;
+      }
+      .agg-table th,
+      .agg-table td {
+        padding: 0.75rem;
+        text-align: left;
+        border-bottom: 1px solid var(--border);
+      }
+      .agg-table th {
+        font-size: 0.6875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--text-muted);
+        font-weight: 700;
+        background: #f8fafc;
+      }
+      .agg-table tr:hover td {
+        background: #f8fafc;
+      }
+      .agg-bar {
+        height: 0.5rem;
+        border-radius: 0.25rem;
+        background: var(--accent);
+        display: inline-block;
+        vertical-align: middle;
+        transition: width 0.3s;
+      }
+
+      /* ======== FOOTER ======== */
+      .footer {
+        text-align: center;
+        padding: 2rem;
+        color: var(--text-muted);
+        font-size: 0.75rem;
+        border-top: 1px solid var(--border);
+        margin-top: 3rem;
+      }
+      .footer a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      .footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* ======== TOAST ======== */
+      .toast {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        padding: 0.75rem 1.25rem;
+        border-radius: 0.5rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+        opacity: 0;
+        transform: translateY(1rem);
+        transition: all 0.3s;
+      }
+      .toast.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .toast.success {
+        background: #166534;
+        color: white;
+      }
+      .toast.error {
+        background: #991b1b;
+        color: white;
+      }
+      .toast.info {
+        background: var(--accent);
+        color: white;
+      }
+
+      /* ======== LOADING ======== */
+      .loading {
+        text-align: center;
+        padding: 3rem;
+        color: var(--text-muted);
+      }
+      .spinner {
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        border: 3px solid var(--border);
+        border-top-color: var(--accent);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* ======== RESPONSIVE ======== */
+      @media (max-width: 768px) {
+        .main {
+          padding: 1rem;
+        }
+        .fb-grid {
+          grid-template-columns: 1fr;
+        }
+        .feature-expand-body.expanded {
+          grid-template-columns: 1fr;
+        }
+        .feature-item-header {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+        .vote-actions {
+          margin: 0 -1rem;
+          padding: 1rem;
+        }
+      }
+      @media print {
+        .header {
+          position: static;
+        }
+        .nav-pills,
+        .vote-actions,
+        .identity-bar,
+        .annotation-area,
+        .priority-btns,
+        .team-votes-toggle,
+        .feature-expand-toggle {
+          display: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <div class="header-inner">
+        <div class="header-brand">
+          <img
+            src="img/bm.png"
+            alt="Burgess Mee"
+            class="header-logo"
+            onerror="this.style.display = 'none'" />
+          <div>
+            <h1>Burgess Mee — Feedback & Priorities</h1>
+            <div class="subtitle">
+              Attendance Notes Product &middot; Qualitative Feedback Review
+            </div>
+          </div>
+        </div>
+        <div class="nav-pills">
+          <button class="nav-pill active" onclick="showPage('features')">
+            ⭐ Feature Priorities
+          </button>
+          <button class="nav-pill" onclick="showPage('feedback')">
+            💬 All Feedback
+          </button>
+          <button class="nav-pill" onclick="showPage('results')">
+            📊 Results
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- ===== PAGE: FEATURES (Priority Voting) ===== -->
+      <section id="page-features" class="page-section active">
+        <div class="identity-bar" id="voter-identity-bar">
+          <label>👤 I am:</label>
+          <div class="name-chips" id="voter-chips">
+            <button class="name-chip" onclick="selectVoterName(this)">Hannah Coupe</button>
+            <button class="name-chip" onclick="selectVoterName(this)">Leora Taratula-Lyons</button>
+            <button class="name-chip" onclick="selectVoterName(this)">Rebecca Allen</button>
+            <button class="name-chip" onclick="selectVoterName(this)">Charlotte Ballard Scott</button>
+            <button class="name-chip" onclick="selectVoterName(this)">Peter Burgess</button>
+          </div>
+          <div class="identity-selected" id="voter-selected">
+            <span id="voter-selected-name"></span>
+            <span class="change-btn" onclick="resetVoterName()">change</span>
+          </div>
+          <input type="hidden" id="voter-name" />
+          <span class="identity-hint"
+            >Tap your name to save your priorities. Your votes are private
+            unless others choose to view.</span
+          >
+        </div>
+
+        <div id="feature-list" class="feature-list">
+          <div class="loading">
+            <div class="spinner"></div>
+            <p style="margin-top: 0.75rem">Loading features…</p>
+          </div>
+        </div>
+
+        <div class="vote-actions" id="vote-actions" style="display: none">
+          <div class="vote-summary" id="vote-summary">
+            No priorities set yet — browse the features and mark the ones that
+            matter most.
+          </div>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap">
+            <button
+              class="btn btn-outline-dark btn-sm"
+              onclick="clearAllVotes()">
+              Clear all
+            </button>
+            <button
+              class="btn btn-primary"
+              id="submit-votes-btn"
+              onclick="submitVotes()"
+              disabled>
+              Submit Priorities
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="team-votes-toggle"
+          id="team-votes-section"
+          style="display: none">
+          <button
+            class="btn btn-outline-dark btn-sm"
+            onclick="toggleTeamVotes()">
+            👀 View how others have voted
+          </button>
+          <div id="team-votes-container" style="display: none"></div>
+        </div>
+      </section>
+
+      <!-- ===== PAGE: FEEDBACK (All Categories) ===== -->
+      <section id="page-feedback" class="page-section">
+        <div class="identity-bar" id="annotator-identity-bar">
+          <label>👤 I am:</label>
+          <div class="name-chips" id="annotator-chips">
+            <button class="name-chip" onclick="selectAnnotatorName(this)">Hannah Coupe</button>
+            <button class="name-chip" onclick="selectAnnotatorName(this)">Leora Taratula-Lyons</button>
+            <button class="name-chip" onclick="selectAnnotatorName(this)">Rebecca Allen</button>
+            <button class="name-chip" onclick="selectAnnotatorName(this)">Charlotte Ballard Scott</button>
+            <button class="name-chip" onclick="selectAnnotatorName(this)">Peter Burgess</button>
+          </div>
+          <div class="identity-selected" id="annotator-selected">
+            <span id="annotator-selected-name"></span>
+            <span class="change-btn" onclick="resetAnnotatorName()">change</span>
+          </div>
+          <input type="hidden" id="annotator-name" />
+          <span class="identity-hint"
+            >Tap your name to add notes or reflections to any feedback
+            item.</span
+          >
+        </div>
+
+        <div id="feedback-overview"></div>
+        <div id="feedback-tabs" class="tab-nav" role="tablist"></div>
+        <div id="feedback-panels"></div>
+      </section>
+
+      <!-- ===== PAGE: RESULTS (Aggregate) ===== -->
+      <section id="page-results" class="page-section">
+        <h2 style="margin-bottom: 1rem; font-size: 1.25rem">
+          📊 Aggregate Priority Results
+        </h2>
+        <p
+          style="
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+          ">
+          This shows the combined priorities from all team members who have
+          voted.
+        </p>
+        <div id="results-content">
+          <div class="loading">
+            <div class="spinner"></div>
+            <p style="margin-top: 0.75rem">Loading results…</p>
+          </div>
+        </div>
+        <div
+          style="
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+          ">
+          <button class="btn btn-primary btn-sm" onclick="downloadResultsCSV()">
+            ⬇ Download Results CSV
+          </button>
+          <button
+            class="btn btn-outline-dark btn-sm"
+            onclick="downloadAnnotationsCSV()">
+            ⬇ Download Annotations CSV
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      Powered by
+      <a href="https://aiphoria.co.uk" target="_blank">Aiphoria</a> &middot;
+      Qualitative feedback analysis for legal professionals
+    </footer>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="config.js"></script>
+    <script>
+      // ============================================================
+      //  STATE
+      // ============================================================
+      let DATA = null;
+      let VOTES = {}; // { feature_id: "top" | "high" | null }
+      let ALL_TEAM_VOTES = []; // from Sheets
+      let ALL_ANNOTATIONS = [];
+
+      const CATEGORIES = [
+        {
+          key: "emotions",
+          label: "Emotions & Positive Reactions",
+          icon: "😃",
+          color: "#22c55e",
+        },
+        {
+          key: "pains",
+          label: "Pain Points & Frustrations",
+          icon: "☹️",
+          color: "#ef4444",
+        },
+        {
+          key: "goals",
+          label: "Goals & Desired Outcomes",
+          icon: "🎯",
+          color: "#3b82f6",
+        },
+        {
+          key: "obstacles",
+          label: "Obstacles & Challenges",
+          icon: "🔗",
+          color: "#f97316",
+        },
+        {
+          key: "workarounds",
+          label: "Workarounds & Current Solutions",
+          icon: "🔧",
+          color: "#8b5cf6",
+        },
+        {
+          key: "background",
+          label: "Background & Context",
+          icon: "📰",
+          color: "#6b7280",
+        },
+        {
+          key: "commitments",
+          label: "Commitments & Next Steps",
+          icon: "🤝",
+          color: "#10b981",
+        },
+        {
+          key: "other_notes",
+          label: "Other Notable Feedback",
+          icon: "📝",
+          color: "#6366f1",
+        },
+        {
+          key: "feature_requests",
+          label: "Feature Requests & Ideas",
+          icon: "💡",
+          color: "#eab308",
+        },
+      ];
+
+      // ============================================================
+      //  INIT
+      // ============================================================
+      document.addEventListener("DOMContentLoaded", async () => {
+        try {
+          const resp = await fetch("data.json");
+          DATA = await resp.json();
+        } catch (e) {
+          document.getElementById("feature-list").innerHTML =
+            '<p style="color:var(--red);text-align:center;padding:2rem">Failed to load data.json. Run build_public.py first.</p>';
+          return;
+        }
+
+        renderFeatures();
+        renderFeedback();
+
+        // Restore saved identity from localStorage
+        restoreSavedNames();
+
+        // Load remote data if persistence configured
+        if (CONFIG.PERSISTENCE_ENABLED && CONFIG.APPS_SCRIPT_URL) {
+          loadRemoteData();
+        }
+      });
+
+      // ============================================================
+      //  NAVIGATION
+      // ============================================================
+      function showPage(page) {
+        document
+          .querySelectorAll(".page-section")
+          .forEach((s) => s.classList.remove("active"));
+        document
+          .querySelectorAll(".nav-pill")
+          .forEach((b) => b.classList.remove("active"));
+        document.getElementById("page-" + page).classList.add("active");
+        event.currentTarget.classList.add("active");
+        if (page === "results") renderResults();
+      }
+
+      // ============================================================
+      //  FEATURES — RENDER
+      // ============================================================
+      function renderFeatures() {
+        const features = DATA.feature_requests || [];
+        if (!features.length) {
+          document.getElementById("feature-list").innerHTML =
+            '<p style="text-align:center;color:var(--text-muted);padding:2rem">No feature requests found.</p>';
+          return;
+        }
+
+        const html = features
+          .map((f, i) => {
+            const fid = "feature_" + i;
+            const currentPriority = VOTES[fid] || "";
+            return `
+      <div class="feature-item ${currentPriority === "top" ? "priority-top" : currentPriority === "high" ? "priority-high" : ""}" id="${fid}" data-fid="${fid}">
+        <div class="feature-item-header">
+          <div>
+            <div class="feature-item-title">💡 ${esc(f.feature_title)}</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.5rem">
+            <span class="feature-item-speaker">${esc(f.speaker)}</span>
+            <div class="priority-btns">
+              <button class="priority-btn ${currentPriority === "top" ? "selected-top" : ""}"
+                onclick="setPriority('${fid}','top',this)" title="Mark as Top Priority">⭐ Top Priority</button>
+              <button class="priority-btn ${currentPriority === "high" ? "selected-high" : ""}"
+                onclick="setPriority('${fid}','high',this)" title="Mark as High Priority">🔥 High Priority</button>
+            </div>
+          </div>
+        </div>
+        <div class="feature-item-quote">"${esc(f.quote)}"</div>
+        <div class="feature-item-need">
+          <strong>🎯 Underlying Need</strong>
+          ${esc(f.underlying_need)}
+        </div>
+        <div class="feature-expand">
+          <button class="feature-expand-toggle" onclick="toggleExpand(this)">▸ Show details</button>
+          <div class="feature-expand-body collapsed">
+            <div class="fd-box"><div class="fd-box-label">✨ User Value</div><div class="fd-box-value">${esc(f.user_value)}</div></div>
+            <div class="fd-box"><div class="fd-box-label">📊 Frequency Signal</div><div class="fd-box-value">${esc(f.frequency_signal)}</div></div>
+            <div class="fd-box"><div class="fd-box-label">🛠️ Effort Hint</div><div class="fd-box-value">${esc(f.effort_hint)}</div></div>
+            <div class="fd-box"><div class="fd-box-label">🚀 Priority Signals</div><div class="fd-box-value">${esc(f.priority_signals)}</div></div>
+          </div>
+        </div>
+      </div>`;
+          })
+          .join("");
+
+        document.getElementById("feature-list").innerHTML = html;
+        document.getElementById("vote-actions").style.display = "flex";
+
+        if (CONFIG.PERSISTENCE_ENABLED) {
+          document.getElementById("team-votes-section").style.display = "block";
+        }
+      }
+
+      function toggleExpand(btn) {
+        const body = btn.nextElementSibling;
+        const isCollapsed = body.classList.contains("collapsed");
+        body.classList.toggle("collapsed", !isCollapsed);
+        body.classList.toggle("expanded", isCollapsed);
+        btn.textContent = isCollapsed ? "▾ Hide details" : "▸ Show details";
+      }
+
+      // ============================================================
+      //  VOTING
+      // ============================================================
+      function setPriority(fid, level, btn) {
+        const current = VOTES[fid];
+        if (current === level) {
+          // Deselect
+          delete VOTES[fid];
+        } else {
+          VOTES[fid] = level;
+        }
+        // Re-render this feature item's visual state
+        const item = document.getElementById(fid);
+        item.classList.remove("priority-top", "priority-high");
+        if (VOTES[fid] === "top") item.classList.add("priority-top");
+        if (VOTES[fid] === "high") item.classList.add("priority-high");
+
+        // Update buttons
+        const btns = item.querySelectorAll(".priority-btn");
+        btns.forEach((b) =>
+          b.classList.remove("selected-top", "selected-high"),
+        );
+        if (VOTES[fid]) {
+          btn.classList.add(
+            VOTES[fid] === "top" ? "selected-top" : "selected-high",
+          );
+        }
+
+        updateVoteSummary();
+        updateSubmitState();
+      }
+
+      // ============================================================
+      //  NAME CHIP SELECTORS
+      // ============================================================
+      function selectVoterName(btn) {
+        document.querySelectorAll('#voter-chips .name-chip').forEach(c => c.classList.remove('selected'));
+        btn.classList.add('selected');
+        document.getElementById('voter-name').value = btn.textContent.trim();
+        document.getElementById('voter-selected-name').textContent = btn.textContent.trim();
+        document.getElementById('voter-chips').style.display = 'none';
+        document.getElementById('voter-selected').style.display = 'flex';
+        document.querySelector('#voter-identity-bar .identity-hint').style.display = 'none';
+        localStorage.setItem('bm_voter_name', btn.textContent.trim());
+        // Also sync annotator if not yet set
+        if (!document.getElementById('annotator-name').value) {
+          const match = document.querySelector(`#annotator-chips .name-chip:nth-child(${Array.from(btn.parentNode.children).indexOf(btn) + 1})`);
+          if (match) selectAnnotatorName(match);
+        }
+        updateSubmitState();
+      }
+
+      function resetVoterName() {
+        document.getElementById('voter-name').value = '';
+        document.querySelectorAll('#voter-chips .name-chip').forEach(c => c.classList.remove('selected'));
+        document.getElementById('voter-chips').style.display = 'flex';
+        document.getElementById('voter-selected').style.display = 'none';
+        document.querySelector('#voter-identity-bar .identity-hint').style.display = '';
+        localStorage.removeItem('bm_voter_name');
+        updateSubmitState();
+      }
+
+      function selectAnnotatorName(btn) {
+        document.querySelectorAll('#annotator-chips .name-chip').forEach(c => c.classList.remove('selected'));
+        btn.classList.add('selected');
+        document.getElementById('annotator-name').value = btn.textContent.trim();
+        document.getElementById('annotator-selected-name').textContent = btn.textContent.trim();
+        document.getElementById('annotator-chips').style.display = 'none';
+        document.getElementById('annotator-selected').style.display = 'flex';
+        document.querySelector('#annotator-identity-bar .identity-hint').style.display = 'none';
+        localStorage.setItem('bm_annotator_name', btn.textContent.trim());
+        // Also sync voter if not yet set
+        if (!document.getElementById('voter-name').value) {
+          const match = document.querySelector(`#voter-chips .name-chip:nth-child(${Array.from(btn.parentNode.children).indexOf(btn) + 1})`);
+          if (match) selectVoterName(match);
+        }
+      }
+
+      function resetAnnotatorName() {
+        document.getElementById('annotator-name').value = '';
+        document.querySelectorAll('#annotator-chips .name-chip').forEach(c => c.classList.remove('selected'));
+        document.getElementById('annotator-chips').style.display = 'flex';
+        document.getElementById('annotator-selected').style.display = 'none';
+        document.querySelector('#annotator-identity-bar .identity-hint').style.display = '';
+        localStorage.removeItem('bm_annotator_name');
+      }
+
+      // Restore saved name on page load
+      function restoreSavedNames() {
+        const saved = localStorage.getItem('bm_voter_name');
+        if (saved) {
+          const chip = Array.from(document.querySelectorAll('#voter-chips .name-chip')).find(c => c.textContent.trim() === saved);
+          if (chip) selectVoterName(chip);
+        }
+        const savedAnnotator = localStorage.getItem('bm_annotator_name');
+        if (savedAnnotator) {
+          const chip = Array.from(document.querySelectorAll('#annotator-chips .name-chip')).find(c => c.textContent.trim() === savedAnnotator);
+          if (chip) selectAnnotatorName(chip);
+        }
+      }
+
+      function clearAllVotes() {
+        VOTES = {};
+        renderFeatures();
+        updateVoteSummary();
+        updateSubmitState();
+      }
+
+      function updateVoteSummary() {
+        const topCount = Object.values(VOTES).filter((v) => v === "top").length;
+        const highCount = Object.values(VOTES).filter(
+          (v) => v === "high",
+        ).length;
+        const total = topCount + highCount;
+
+        const el = document.getElementById("vote-summary");
+        if (total === 0) {
+          el.innerHTML =
+            "No priorities set yet — browse the features and mark the ones that matter most.";
+        } else {
+          const parts = [];
+          if (topCount) parts.push(`<strong>${topCount}</strong> top priority`);
+          if (highCount)
+            parts.push(`<strong>${highCount}</strong> high priority`);
+          el.innerHTML = `You've marked ${parts.join(" and ")} feature${total > 1 ? "s" : ""}.`;
+        }
+      }
+
+      function updateSubmitState() {
+        const name = document.getElementById("voter-name").value.trim();
+        const hasVotes = Object.keys(VOTES).length > 0;
+        document.getElementById("submit-votes-btn").disabled = !(
+          name && hasVotes
+        );
+      }
+
+      async function submitVotes() {
+        if (!CONFIG.PERSISTENCE_ENABLED || !CONFIG.APPS_SCRIPT_URL) {
+          showToast(
+            "Persistence not configured — set APPS_SCRIPT_URL in config.js",
+            "error",
+          );
+          return;
+        }
+
+        const voterName = document.getElementById("voter-name").value.trim();
+        if (!voterName) {
+          showToast("Please enter your name first", "error");
+          return;
+        }
+
+        const votesArray = Object.entries(VOTES).map(([fid, priority]) => {
+          const idx = parseInt(fid.replace("feature_", ""), 10);
+          const title = (DATA.feature_requests[idx] || {}).feature_title || fid;
+          return { feature_id: title, priority };
+        });
+
+        if (!votesArray.length) {
+          showToast("No priorities set", "error");
+          return;
+        }
+
+        const btn = document.getElementById("submit-votes-btn");
+        btn.disabled = true;
+        btn.textContent = "Submitting…";
+
+        try {
+          await postToSheets({
+            action: "submit_votes",
+            voter_name: voterName,
+            votes: votesArray,
+          });
+          showToast(
+            `✓ ${votesArray.length} priorities saved for ${voterName}`,
+            "success",
+          );
+          loadRemoteData(); // refresh
+        } catch (e) {
+          showToast("Failed to save — check config.js", "error");
+        } finally {
+          btn.disabled = false;
+          btn.textContent = "Submit Priorities";
+        }
+      }
+
+      // ============================================================
+      //  TEAM VOTES
+      // ============================================================
+      function toggleTeamVotes() {
+        const container = document.getElementById("team-votes-container");
+        const wasHidden = container.style.display === "none";
+        container.style.display = wasHidden ? "block" : "none";
+        if (wasHidden) renderTeamVotes();
+      }
+
+      function renderTeamVotes() {
+        const container = document.getElementById("team-votes-container");
+        if (!ALL_TEAM_VOTES.length) {
+          container.innerHTML =
+            '<p style="color:var(--text-muted);font-size:0.875rem;padding:1rem;text-align:center">No votes submitted yet.</p>';
+          return;
+        }
+
+        // Group by voter
+        const byVoter = {};
+        ALL_TEAM_VOTES.forEach((v) => {
+          if (!byVoter[v.voter_name]) byVoter[v.voter_name] = [];
+          byVoter[v.voter_name].push(v);
+        });
+
+        let html =
+          '<table class="team-votes-table"><thead><tr><th>Team Member</th><th>Feature</th><th>Priority</th></tr></thead><tbody>';
+        for (const [name, votes] of Object.entries(byVoter)) {
+          votes.forEach((v, i) => {
+            html += `<tr>
+        ${i === 0 ? `<td rowspan="${votes.length}" style="font-weight:600">${esc(name)}</td>` : ""}
+        <td>${esc(v.feature_id)}</td>
+        <td><span class="priority-badge ${v.priority === "top" ? "top" : "high"}">${v.priority === "top" ? "⭐ Top" : "🔥 High"}</span></td>
+      </tr>`;
+          });
+        }
+        html += "</tbody></table>";
+        container.innerHTML = html;
+      }
+
+      // ============================================================
+      //  FEEDBACK — RENDER
+      // ============================================================
+      function renderFeedback() {
+        const overview = document.getElementById("feedback-overview");
+        let ovHtml = "";
+
+        if (DATA.overall_sentiment) {
+          ovHtml += `<div class="sentiment-banner"><strong>💬 Overall Sentiment</strong>${esc(DATA.overall_sentiment)}</div>`;
+        }
+        if (DATA.key_themes && DATA.key_themes.length) {
+          ovHtml += `<div class="section-box"><div class="section-box-title">🏷️ Key Themes</div>
+      <div class="chip-wrap">${DATA.key_themes.map((t) => `<span class="chip">${esc(t)}</span>`).join("")}</div></div>`;
+        }
+        if (DATA.recommended_actions && DATA.recommended_actions.length) {
+          ovHtml += `<div class="section-box"><div class="section-box-title">🚀 Recommended Actions</div>
+      <ol class="action-ol">${DATA.recommended_actions.map((a) => `<li><span>${esc(a)}</span></li>`).join("")}</ol></div>`;
+        }
+        overview.innerHTML = ovHtml;
+
+        // Tabs
+        const tabNav = document.getElementById("feedback-tabs");
+        const panels = document.getElementById("feedback-panels");
+        let tabHtml = "",
+          panelHtml = "";
+
+        CATEGORIES.forEach((cat, ci) => {
+          const items = DATA[cat.key] || [];
+          tabHtml += `<button class="tab-btn ${ci === 0 ? "active" : ""}" onclick="showTab('${cat.key}',this)" role="tab">
+      ${cat.icon} ${cat.label} <span class="badge">${items.length}</span></button>`;
+
+          panelHtml += `<div class="cat-panel ${ci === 0 ? "active" : ""}" id="catpanel-${cat.key}">
+      <div class="cat-header"><h3>${cat.icon} ${cat.label}</h3></div>`;
+
+          if (items.length) {
+            if (cat.key === "feature_requests") {
+              panelHtml +=
+                '<p style="color:var(--text-muted);font-size:0.875rem;margin-bottom:1rem">Feature requests are displayed on the ⭐ Feature Priorities page for voting.</p>';
+              panelHtml += '<div class="fb-grid">';
+              items.forEach((item, idx) => {
+                panelHtml += `<div class="fb-card" style="--card-accent:${cat.color}">
+            <div class="fb-quote">${esc(item.quote)}</div>
+            <div class="fb-meta">
+              <div class="fb-meta-row"><span class="fb-meta-label">Feature</span><span class="fb-meta-val" style="font-weight:700">${esc(item.feature_title)}</span></div>
+              <div class="fb-meta-row"><span class="fb-meta-label">Speaker</span><span class="fb-speaker">${esc(item.speaker)}</span></div>
+              <div class="fb-meta-row"><span class="fb-meta-label">Need</span><span class="fb-meta-val">${esc(item.underlying_need)}</span></div>
+            </div>
+            ${annotationHTML(cat.key, idx)}
+          </div>`;
+              });
+              panelHtml += "</div>";
+            } else {
+              panelHtml += '<div class="fb-grid">';
+              items.forEach((item, idx) => {
+                panelHtml += `<div class="fb-card" style="--card-accent:${cat.color}">
+            <div class="fb-quote">${esc(item.quote)}</div>
+            <div class="fb-meta">
+              <div class="fb-meta-row"><span class="fb-meta-label">Speaker</span><span class="fb-speaker">${esc(item.speaker)}</span></div>
+              <div class="fb-meta-row"><span class="fb-meta-label">Summary</span><span class="fb-meta-val">${esc(item.summary)}</span></div>
+              <div class="fb-meta-row"><span class="fb-meta-label">Significance</span><span class="fb-meta-val">${esc(item.significance)}</span></div>
+            </div>
+            ${annotationHTML(cat.key, idx)}
+          </div>`;
+              });
+              panelHtml += "</div>";
+            }
+          } else {
+            panelHtml +=
+              '<p style="color:var(--text-muted);text-align:center;padding:2rem">No items in this category.</p>';
+          }
+          panelHtml += "</div>";
+        });
+
+        tabNav.innerHTML = tabHtml;
+        panels.innerHTML = panelHtml;
+      }
+
+      function annotationHTML(category, itemIndex) {
+        const key = `${category}_${itemIndex}`;
+        const existing = ALL_ANNOTATIONS.filter(
+          (a) =>
+            a.category === category &&
+            String(a.item_index) === String(itemIndex),
+        );
+
+        let existingHtml = "";
+        if (existing.length) {
+          existingHtml =
+            '<div class="existing-annotations">' +
+            existing
+              .map(
+                (a) => `<div class="annotation-note">
+        <span class="an-author">${esc(a.author_name)}</span><span class="an-time">${formatTime(a.timestamp)}</span>
+        <div>${esc(a.note)}</div>
+      </div>`,
+              )
+              .join("") +
+            "</div>";
+        }
+
+        return `<div class="annotation-area">
+    ${existingHtml}
+    <button class="annotation-toggle" onclick="toggleAnnotation('${key}')">💬 Add a note…</button>
+    <div class="annotation-form" id="annform-${key}">
+      <textarea class="annotation-input" id="anninput-${key}" placeholder="Add a reflection, follow-up, or question…" rows="2"></textarea>
+      <div class="annotation-submit-row">
+        <button class="btn btn-primary btn-sm" onclick="submitAnnotation('${category}', ${itemIndex}, '${key}')">Save note</button>
+      </div>
+    </div>
+  </div>`;
+      }
+
+      function showTab(key, btn) {
+        document
+          .querySelectorAll(".cat-panel")
+          .forEach((p) => p.classList.remove("active"));
+        document
+          .querySelectorAll(".tab-btn")
+          .forEach((b) => b.classList.remove("active"));
+        document.getElementById("catpanel-" + key).classList.add("active");
+        btn.classList.add("active");
+      }
+
+      // ============================================================
+      //  ANNOTATIONS
+      // ============================================================
+      function toggleAnnotation(key) {
+        const form = document.getElementById("annform-" + key);
+        form.classList.toggle("open");
+        if (form.classList.contains("open")) {
+          document.getElementById("anninput-" + key).focus();
+        }
+      }
+
+      async function submitAnnotation(category, itemIndex, key) {
+        const name = document.getElementById("annotator-name").value.trim();
+        if (!name) {
+          showToast("Please enter your name first", "error");
+          return;
+        }
+
+        const input = document.getElementById("anninput-" + key);
+        const note = input.value.trim();
+        if (!note) return;
+
+        if (!CONFIG.PERSISTENCE_ENABLED || !CONFIG.APPS_SCRIPT_URL) {
+          // Store locally for this session
+          ALL_ANNOTATIONS.push({
+            timestamp: new Date().toISOString(),
+            author_name: name,
+            category,
+            item_index: itemIndex,
+            note,
+          });
+          input.value = "";
+          renderFeedback();
+          showToast(
+            "✓ Note saved (local only — configure Google Sheets for persistence)",
+            "info",
+          );
+          return;
+        }
+
+        try {
+          await postToSheets({
+            action: "add_annotation",
+            author_name: name,
+            category,
+            item_index: itemIndex,
+            note,
+          });
+          input.value = "";
+          showToast("✓ Note saved", "success");
+          await loadRemoteData();
+          renderFeedback();
+        } catch (e) {
+          showToast("Failed to save note", "error");
+        }
+      }
+
+      // ============================================================
+      //  RESULTS — AGGREGATE
+      // ============================================================
+      function renderResults() {
+        const container = document.getElementById("results-content");
+        const features = DATA.feature_requests || [];
+
+        if (!ALL_TEAM_VOTES.length && !Object.keys(VOTES).length) {
+          container.innerHTML =
+            '<p style="color:var(--text-muted);text-align:center;padding:2rem">No votes have been submitted yet. Head to ⭐ Feature Priorities to cast yours.</p>';
+          return;
+        }
+
+        // Combine remote + local votes for display
+        const allVotes = [...ALL_TEAM_VOTES];
+        // Add local unsaved votes as preview
+        const localName =
+          document.getElementById("voter-name").value.trim() || "You (unsaved)";
+        Object.entries(VOTES).forEach(([fid, priority]) => {
+          const idx = parseInt(fid.replace("feature_", ""), 10);
+          const title = (features[idx] || {}).feature_title || fid;
+          allVotes.push({ voter_name: localName, feature_id: title, priority });
+        });
+
+        // Score: top = 3, high = 1
+        const scores = {};
+        const voterNames = new Set();
+        allVotes.forEach((v) => {
+          voterNames.add(v.voter_name);
+          if (!scores[v.feature_id])
+            scores[v.feature_id] = { top: 0, high: 0, total: 0, voters: [] };
+          if (v.priority === "top") {
+            scores[v.feature_id].top++;
+            scores[v.feature_id].total += 3;
+          } else if (v.priority === "high") {
+            scores[v.feature_id].high++;
+            scores[v.feature_id].total += 1;
+          }
+          scores[v.feature_id].voters.push(v.voter_name);
+        });
+
+        const sorted = Object.entries(scores).sort(
+          (a, b) => b[1].total - a[1].total,
+        );
+        const maxScore = sorted.length ? sorted[0][1].total : 1;
+
+        let html = `<p style="font-size:0.8125rem;color:var(--text-muted);margin-bottom:1rem">${voterNames.size} team member${voterNames.size !== 1 ? "s" : ""} have voted. Scoring: ⭐ Top Priority = 3 points, 🔥 High Priority = 1 point.</p>`;
+        html +=
+          '<table class="agg-table"><thead><tr><th style="width:2rem">#</th><th>Feature</th><th style="width:4rem">⭐ Top</th><th style="width:4rem">🔥 High</th><th style="width:5rem">Score</th><th style="min-width:6rem">Weight</th></tr></thead><tbody>';
+
+        sorted.forEach(([name, s], i) => {
+          const pct = Math.round((s.total / maxScore) * 100);
+          html += `<tr>
+      <td style="font-weight:700;color:var(--text-muted)">${i + 1}</td>
+      <td style="font-weight:600">${esc(name)}</td>
+      <td>${s.top || "—"}</td>
+      <td>${s.high || "—"}</td>
+      <td style="font-weight:700">${s.total}</td>
+      <td><div class="agg-bar" style="width:${pct}%"></div></td>
+    </tr>`;
+        });
+
+        html += "</tbody></table>";
+        container.innerHTML = html;
+      }
+
+      // ============================================================
+      //  CSV EXPORT
+      // ============================================================
+      function downloadResultsCSV() {
+        const features = DATA.feature_requests || [];
+        const allVotes = [...ALL_TEAM_VOTES];
+
+        const scores = {};
+        allVotes.forEach((v) => {
+          if (!scores[v.feature_id])
+            scores[v.feature_id] = { top: 0, high: 0, total: 0 };
+          if (v.priority === "top") {
+            scores[v.feature_id].top++;
+            scores[v.feature_id].total += 3;
+          } else if (v.priority === "high") {
+            scores[v.feature_id].high++;
+            scores[v.feature_id].total += 1;
+          }
+        });
+
+        const sorted = Object.entries(scores).sort(
+          (a, b) => b[1].total - a[1].total,
+        );
+
+        let csv = "Rank,Feature,Top Priority Votes,High Priority Votes,Score\n";
+        sorted.forEach(([name, s], i) => {
+          csv += `${i + 1},"${name}",${s.top},${s.high},${s.total}\n`;
+        });
+
+        // Also individual votes
+        csv += "\n\nVoter,Feature,Priority\n";
+        allVotes.forEach((v) => {
+          csv += `"${v.voter_name}","${v.feature_id}","${v.priority}"\n`;
+        });
+
+        downloadFile(csv, "feature_priority_results.csv", "text/csv");
+      }
+
+      function downloadAnnotationsCSV() {
+        if (!ALL_ANNOTATIONS.length) {
+          showToast("No annotations to export", "info");
+          return;
+        }
+        let csv = "Timestamp,Author,Category,Item Index,Note\n";
+        ALL_ANNOTATIONS.forEach((a) => {
+          csv += `"${a.timestamp}","${a.author_name}","${a.category}","${a.item_index}","${(a.note || "").replace(/"/g, '""')}"\n`;
+        });
+        downloadFile(csv, "annotations.csv", "text/csv");
+      }
+
+      function downloadFile(content, filename, mime) {
+        const blob = new Blob([content], { type: mime });
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = filename;
+        a.click();
+        URL.revokeObjectURL(a.href);
+      }
+
+      // ============================================================
+      //  GOOGLE SHEETS API
+      // ============================================================
+      // Apps Script web apps redirect POST → googleusercontent.com which returns 405.
+      // Workaround: send ALL requests as GET with the payload in a URL parameter.
+      async function postToSheets(payload) {
+        const encoded = encodeURIComponent(JSON.stringify(payload));
+        const url = `${CONFIG.APPS_SCRIPT_URL}?action=${payload.action}&payload=${encoded}`;
+        const resp = await fetch(url, { redirect: "follow" });
+        return resp.json();
+      }
+
+      async function getFromSheets(action) {
+        const url = `${CONFIG.APPS_SCRIPT_URL}?action=${action}`;
+        const resp = await fetch(url, { redirect: "follow" });
+        return resp.json();
+      }
+
+      async function loadRemoteData() {
+        if (!CONFIG.PERSISTENCE_ENABLED || !CONFIG.APPS_SCRIPT_URL) return;
+        try {
+          const [votesResp, annotationsResp] = await Promise.all([
+            getFromSheets("get_votes"),
+            getFromSheets("get_annotations"),
+          ]);
+          ALL_TEAM_VOTES = votesResp.votes || [];
+          ALL_ANNOTATIONS = annotationsResp.annotations || [];
+        } catch (e) {
+          console.warn("Could not load remote data:", e);
+        }
+      }
+
+      // ============================================================
+      //  UTILITIES
+      // ============================================================
+      function esc(str) {
+        if (!str) return "";
+        const d = document.createElement("div");
+        d.textContent = str;
+        return d.innerHTML;
+      }
+
+      function formatTime(ts) {
+        if (!ts) return "";
+        try {
+          const d = new Date(ts);
+          return (
+            d.toLocaleDateString("en-GB", { day: "numeric", month: "short" }) +
+            " " +
+            d.toLocaleTimeString("en-GB", {
+              hour: "2-digit",
+              minute: "2-digit",
+            })
+          );
+        } catch {
+          return ts;
+        }
+      }
+
+      function showToast(msg, type = "info") {
+        const el = document.getElementById("toast");
+        el.textContent = msg;
+        el.className = "toast " + type;
+        setTimeout(() => el.classList.add("visible"), 10);
+        setTimeout(() => el.classList.remove("visible"), 3000);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+# Only the web app files should be committed:
+#   index.html, config.js, data.json, img/bm.png
+#
+# Ignore everything else that might end up here
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+.env
