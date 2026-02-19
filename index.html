@@ -6,7 +6,9 @@
     <title>Burgess Mee — Feedback & Feature Priorities</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet" />
     <style>
       /* ======== RESET & VARIABLES ======== */
       *,
@@ -17,12 +19,12 @@
         box-sizing: border-box;
       }
       :root {
-        --bg: #F5F6FB;
-        --card-bg: #FFFFFF;
-        --text: #191A1F;
-        --text-muted: #76808F;
-        --text-meta: #ADB3C2;
-        --border: #E2E8F0;
+        --bg: #f5f6fb;
+        --card-bg: #ffffff;
+        --text: #191a1f;
+        --text-muted: #76808f;
+        --text-meta: #adb3c2;
+        --border: #e2e8f0;
         --accent: #633c99;
         --accent-light: #f0eaf8;
         --accent-hover: #4e2e7a;
@@ -30,14 +32,20 @@
         --yellow-light: #faf8f0;
         --yellow-border: #d4c87a;
         --green: #7b993c;
-        --red: #FA6D6C;
+        --red: #fa6d6c;
         --orange: #998b3c;
-        --info: #36C7E9;
-        --surface-alt: #F7F9FE;
+        --info: #36c7e9;
+        --surface-alt: #f7f9fe;
         --focus-ring: rgba(99, 60, 153, 0.25);
       }
       body {
-        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
         font-optical-sizing: auto;
         background: var(--bg);
         color: var(--text);
@@ -47,7 +55,12 @@
 
       /* ======== HEADER ======== */
       .header {
-        background: linear-gradient(135deg, #2d1650 0%, #3d2066 50%, #4e2e7a 100%);
+        background: linear-gradient(
+          135deg,
+          #2d1650 0%,
+          #3d2066 50%,
+          #4e2e7a 100%
+        );
         color: white;
         padding: 1.25rem 2rem;
         position: sticky;
@@ -79,7 +92,7 @@
         letter-spacing: -0.02em;
       }
       .header .subtitle {
-        color: rgba(255,255,255,0.6);
+        color: rgba(255, 255, 255, 0.6);
         font-size: 0.75rem;
         margin-top: 0.125rem;
         letter-spacing: 0.01em;
@@ -113,11 +126,11 @@
       }
       .nav-pill.active {
         color: white;
-        background: rgba(255,255,255,0.18);
-        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2);
+        background: rgba(255, 255, 255, 0.18);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
       }
       .nav-pill:focus-visible {
-        outline: 2px solid rgba(255,255,255,0.5);
+        outline: 2px solid rgba(255, 255, 255, 0.5);
         outline-offset: 2px;
       }
 
@@ -137,7 +150,7 @@
       /* ======== VOTER IDENTITY BAR ======== */
       .identity-bar {
         background: var(--accent-light);
-        border: 1px solid rgba(99,60,153,0.15);
+        border: 1px solid rgba(99, 60, 153, 0.15);
         border-radius: 12px;
         padding: 0.875rem 1.25rem;
         margin-bottom: 1.5rem;
@@ -153,7 +166,7 @@
       }
       .identity-input {
         padding: 0.5rem 0.75rem;
-        border: 1px solid rgba(99,60,153,0.25);
+        border: 1px solid rgba(99, 60, 153, 0.25);
         border-radius: 8px;
         font-size: 0.8125rem;
         flex: 1;
@@ -179,7 +192,7 @@
       }
       .name-chip {
         padding: 0.4rem 0.875rem;
-        border: 1.5px solid rgba(99,60,153,0.25);
+        border: 1.5px solid rgba(99, 60, 153, 0.25);
         border-radius: 50px;
         background: #fff;
         font-size: 0.8125rem;
@@ -391,7 +404,7 @@
       }
       .priority-btn.selected-top {
         background: var(--red);
-        color: #191A1F;
+        color: #191a1f;
         border-color: var(--red);
       }
       .priority-btn.selected-high {
@@ -498,11 +511,11 @@
         font-weight: 700;
       }
       .priority-badge.top {
-        background: rgba(250,109,108,0.15);
+        background: rgba(250, 109, 108, 0.15);
         color: #c0302f;
       }
       .priority-badge.high {
-        background: rgba(153,139,60,0.15);
+        background: rgba(153, 139, 60, 0.15);
         color: #7a6e26;
       }
 
@@ -739,7 +752,7 @@
       /* ======== SENTIMENT & THEMES (overview section) ======== */
       .sentiment-banner {
         background: linear-gradient(135deg, #f0eaf8 0%, #e8e0f4 100%);
-        border: 1px solid rgba(99,60,153,0.15);
+        border: 1px solid rgba(99, 60, 153, 0.15);
         border-radius: 12px;
         padding: 1.25rem 1.5rem;
         margin-bottom: 1.5rem;
@@ -886,7 +899,7 @@
       }
       .toast.error {
         background: var(--red);
-        color: #191A1F;
+        color: #191a1f;
       }
       .toast.info {
         background: var(--accent);
@@ -1523,7 +1536,10 @@
             `✓ ${votesArray.length} priorities saved for ${voterName}`,
             "success",
           );
+          // Reload fresh data from Sheets and re-render everything
           await loadRemoteData();
+          renderFeatures();
+          renderFeedback();
           restoreUserVotes();
         } catch (e) {
           showToast("Failed to save — check config.js", "error");
@@ -1988,42 +2004,54 @@
       // Workaround: send ALL requests as GET with the payload in a URL parameter.
       async function postToSheets(payload) {
         const encoded = encodeURIComponent(JSON.stringify(payload));
-        const url = `${CONFIG.APPS_SCRIPT_URL}?action=${payload.action}&payload=${encoded}`;
-        const resp = await fetch(url, { redirect: "follow" });
+        const url = `${CONFIG.APPS_SCRIPT_URL}?action=${payload.action}&payload=${encoded}&_t=${Date.now()}`;
+        const resp = await fetch(url, { redirect: "follow", cache: "no-store" });
         return resp.json();
       }
 
       async function getFromSheets(action) {
-        const url = `${CONFIG.APPS_SCRIPT_URL}?action=${action}`;
-        const resp = await fetch(url, { redirect: "follow" });
+        const url = `${CONFIG.APPS_SCRIPT_URL}?action=${action}&_t=${Date.now()}`;
+        const resp = await fetch(url, { redirect: "follow", cache: "no-store" });
         return resp.json();
       }
 
       async function loadRemoteData() {
         if (!CONFIG.PERSISTENCE_ENABLED || !CONFIG.APPS_SCRIPT_URL) return;
-        try {
-          const [votesResp, annotationsResp, speakersResp] = await Promise.all([
+        // Use allSettled so one failing endpoint doesn't block the others
+        const [votesResult, annotationsResult, speakersResult] =
+          await Promise.allSettled([
             getFromSheets("get_votes"),
             getFromSheets("get_annotations"),
             getFromSheets("get_speakers"),
           ]);
-          ALL_TEAM_VOTES = votesResp.votes || [];
-          ALL_ANNOTATIONS = annotationsResp.annotations || [];
-          // Apply speaker overrides from Sheets
-          const speakers = speakersResp.speakers || [];
-          speakers.forEach(s => {
+
+        if (votesResult.status === "fulfilled") {
+          ALL_TEAM_VOTES = votesResult.value.votes || [];
+        } else {
+          console.warn("Could not load votes:", votesResult.reason);
+        }
+
+        if (annotationsResult.status === "fulfilled") {
+          ALL_ANNOTATIONS = annotationsResult.value.annotations || [];
+        } else {
+          console.warn("Could not load annotations:", annotationsResult.reason);
+        }
+
+        if (speakersResult.status === "fulfilled") {
+          const speakers = speakersResult.value.speakers || [];
+          speakers.forEach((s) => {
             if (s.feature_index !== undefined && s.speaker_name) {
               SPEAKER_OVERRIDES[s.feature_index] = s.speaker_name;
             }
           });
-        } catch (e) {
-          console.warn("Could not load remote data:", e);
+        } else {
+          console.warn("Could not load speakers:", speakersResult.reason);
         }
       }
 
       function restoreUserVotes() {
         const voterName = document.getElementById("voter-name").value.trim();
-        if (!voterName || !ALL_TEAM_VOTES.length || !DATA) return;
+        if (!voterName || !DATA) return;
 
         // Build title → feature_N mapping
         const titleToFid = {};
@@ -2040,14 +2068,14 @@
           }
         });
 
-        // Only overwrite if the user hasn't started making new local changes
-        // (i.e. VOTES is empty — user just loaded or selected name)
+        // Always apply remote state — this ensures the UI stays in sync
+        VOTES = restoredVotes;
+        renderFeatures();
+        renderFeedback();
+        updateVoteSummary();
+        updateSubmitState();
+
         if (Object.keys(restoredVotes).length > 0) {
-          VOTES = restoredVotes;
-          renderFeatures();
-          updateVoteSummary();
-          updateSubmitState();
-          // Switch button text since they've already submitted before
           document.getElementById("submit-votes-btn").textContent =
             "Update Priorities";
         }
@@ -2092,12 +2120,14 @@
       //  EDITABLE SPEAKER NAMES
       // ============================================================
       function editSpeakerName(featureIndex, el) {
-        const currentName = SPEAKER_OVERRIDES[featureIndex] || DATA.feature_requests[featureIndex].speaker;
-        const input = document.createElement('input');
-        input.type = 'text';
+        const currentName =
+          SPEAKER_OVERRIDES[featureIndex] ||
+          DATA.feature_requests[featureIndex].speaker;
+        const input = document.createElement("input");
+        input.type = "text";
         input.value = currentName;
-        input.className = 'speaker-edit-input';
-        input.setAttribute('data-feature-index', featureIndex);
+        input.className = "speaker-edit-input";
+        input.setAttribute("data-feature-index", featureIndex);
 
         const parent = el.parentNode;
         parent.replaceChild(input, el);
@@ -2118,21 +2148,26 @@
           if (CONFIG.PERSISTENCE_ENABLED && CONFIG.APPS_SCRIPT_URL) {
             try {
               await postToSheets({
-                action: 'update_speaker',
+                action: "update_speaker",
                 feature_index: featureIndex,
-                speaker_name: newName
+                speaker_name: newName,
               });
-              showToast(`✓ Speaker updated to ${newName}`, 'success');
+              showToast(`✓ Speaker updated to ${newName}`, "success");
             } catch (e) {
-              showToast('Failed to save speaker name', 'error');
+              showToast("Failed to save speaker name", "error");
             }
           }
         };
 
-        input.addEventListener('blur', save);
-        input.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter') { e.preventDefault(); input.blur(); }
-          if (e.key === 'Escape') { renderFeatures(); }
+        input.addEventListener("blur", save);
+        input.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            input.blur();
+          }
+          if (e.key === "Escape") {
+            renderFeatures();
+          }
         });
       }
     </script>
