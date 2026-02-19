@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Burgess Mee — Feedback & Feature Priorities</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
     <style>
       /* ======== RESET & VARIABLES ======== */
       *,
@@ -14,38 +17,43 @@
         box-sizing: border-box;
       }
       :root {
-        --bg: #f8fafc;
-        --card-bg: #ffffff;
-        --text: #1e293b;
-        --text-muted: #64748b;
-        --border: #e2e8f0;
-        --accent: #2563eb;
-        --accent-light: #dbeafe;
-        --yellow: #eab308;
-        --yellow-light: #fefce8;
-        --yellow-border: #fde68a;
-        --green: #22c55e;
-        --red: #ef4444;
-        --orange: #f97316;
+        --bg: #F5F6FB;
+        --card-bg: #FFFFFF;
+        --text: #191A1F;
+        --text-muted: #76808F;
+        --text-meta: #ADB3C2;
+        --border: #E2E8F0;
+        --accent: #633c99;
+        --accent-light: #f0eaf8;
+        --accent-hover: #4e2e7a;
+        --yellow: #998b3c;
+        --yellow-light: #faf8f0;
+        --yellow-border: #d4c87a;
+        --green: #7b993c;
+        --red: #FA6D6C;
+        --orange: #998b3c;
+        --info: #36C7E9;
+        --surface-alt: #F7F9FE;
+        --focus-ring: rgba(99, 60, 153, 0.25);
       }
       body {
-        font-family:
-          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, sans-serif;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-optical-sizing: auto;
         background: var(--bg);
         color: var(--text);
         line-height: 1.6;
+        font-size: 14px;
       }
 
       /* ======== HEADER ======== */
       .header {
-        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        background: linear-gradient(135deg, #2d1650 0%, #3d2066 50%, #4e2e7a 100%);
         color: white;
-        padding: 1.5rem 2rem;
+        padding: 1.25rem 2rem;
         position: sticky;
         top: 0;
         z-index: 100;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 12px rgba(99, 60, 153, 0.18);
       }
       .header-inner {
         max-width: 1200px;
@@ -66,43 +74,51 @@
         border-radius: 0.375rem;
       }
       .header h1 {
-        font-size: 1.375rem;
+        font-size: 1.25rem;
         font-weight: 700;
         letter-spacing: -0.02em;
       }
       .header .subtitle {
-        color: #94a3b8;
-        font-size: 0.8125rem;
+        color: rgba(255,255,255,0.6);
+        font-size: 0.75rem;
         margin-top: 0.125rem;
+        letter-spacing: 0.01em;
       }
 
       /* ======== NAV PILLS ======== */
       .nav-pills {
         display: flex;
         gap: 0.25rem;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 0.5rem;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
         padding: 0.25rem;
+        flex-wrap: wrap;
       }
       .nav-pill {
         padding: 0.5rem 1rem;
         border: none;
         background: transparent;
-        color: rgba(255, 255, 255, 0.7);
+        color: rgba(255, 255, 255, 0.65);
         font-size: 0.8125rem;
         font-weight: 600;
-        border-radius: 0.375rem;
+        border-radius: 10px;
         cursor: pointer;
         transition: all 0.15s;
         white-space: nowrap;
+        font-family: inherit;
       }
       .nav-pill:hover {
         color: white;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.12);
       }
       .nav-pill.active {
         color: white;
-        background: var(--accent);
+        background: rgba(255,255,255,0.18);
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2);
+      }
+      .nav-pill:focus-visible {
+        outline: 2px solid rgba(255,255,255,0.5);
+        outline-offset: 2px;
       }
 
       /* ======== MAIN ======== */
@@ -121,25 +137,25 @@
       /* ======== VOTER IDENTITY BAR ======== */
       .identity-bar {
         background: var(--accent-light);
-        border: 1px solid #93c5fd;
-        border-radius: 0.75rem;
-        padding: 1rem 1.5rem;
+        border: 1px solid rgba(99,60,153,0.15);
+        border-radius: 12px;
+        padding: 0.875rem 1.25rem;
         margin-bottom: 1.5rem;
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 0.75rem;
         flex-wrap: wrap;
       }
       .identity-bar label {
         font-weight: 600;
-        font-size: 0.875rem;
+        font-size: 0.8125rem;
         color: var(--accent);
       }
       .identity-input {
         padding: 0.5rem 0.75rem;
-        border: 2px solid #93c5fd;
-        border-radius: 0.5rem;
-        font-size: 0.875rem;
+        border: 1px solid rgba(99,60,153,0.25);
+        border-radius: 8px;
+        font-size: 0.8125rem;
         flex: 1;
         min-width: 12rem;
         font-family: inherit;
@@ -149,7 +165,7 @@
       }
       .identity-input:focus {
         border-color: var(--accent);
-        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        box-shadow: 0 0 0 3px var(--focus-ring);
       }
       .identity-hint {
         font-size: 0.75rem;
@@ -162,11 +178,11 @@
         flex: 1;
       }
       .name-chip {
-        padding: 0.45rem 1rem;
-        border: 2px solid #93c5fd;
-        border-radius: 2rem;
+        padding: 0.4rem 0.875rem;
+        border: 1.5px solid rgba(99,60,153,0.25);
+        border-radius: 50px;
         background: #fff;
-        font-size: 0.85rem;
+        font-size: 0.8125rem;
         font-family: inherit;
         cursor: pointer;
         transition: all 0.15s ease;
@@ -181,6 +197,10 @@
         background: var(--accent);
         color: #fff;
         border-color: var(--accent);
+      }
+      .name-chip:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
       }
       .identity-selected {
         font-size: 0.875rem;
@@ -202,27 +222,27 @@
       .feature-list {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 0.75rem;
       }
       .feature-item {
         background: var(--card-bg);
         border: 1px solid var(--border);
-        border-left: 4px solid var(--yellow);
-        border-radius: 0.75rem;
-        padding: 1.25rem 1.5rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        border-left: 4px solid var(--accent);
+        border-radius: 12px;
+        padding: 1.125rem 1.375rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
         transition: all 0.15s ease;
       }
       .feature-item:hover {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 3px 10px rgba(99, 60, 153, 0.08);
       }
       .feature-item.priority-top {
         border-left-color: var(--red);
-        background: #fef2f2;
+        background: #fef6f6;
       }
       .feature-item.priority-high {
-        border-left-color: var(--orange);
-        background: #fff7ed;
+        border-left-color: var(--yellow);
+        background: var(--yellow-light);
       }
 
       .feature-item-header {
@@ -239,17 +259,39 @@
       .feature-item-speaker {
         font-size: 0.6875rem;
         font-weight: 600;
-        background: #f1f5f9;
-        color: #475569;
+        background: var(--surface-alt);
+        color: var(--text-muted);
         padding: 0.125rem 0.5rem;
-        border-radius: 0.375rem;
+        border-radius: 50px;
         white-space: nowrap;
+      }
+      .feature-item-speaker.editable {
+        cursor: pointer;
+        transition: all 0.15s;
+      }
+      .feature-item-speaker.editable:hover {
+        background: var(--accent-light);
+        color: var(--accent);
+      }
+      .speaker-edit-input {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        padding: 0.125rem 0.5rem;
+        border: 1.5px solid var(--accent);
+        border-radius: 50px;
+        font-family: inherit;
+        outline: none;
+        min-width: 8rem;
+        background: #fff;
+      }
+      .speaker-edit-input:focus {
+        box-shadow: 0 0 0 3px var(--focus-ring);
       }
       .feature-item-quote {
         font-style: italic;
-        color: #78716c;
+        color: var(--text-muted);
         font-size: 0.8125rem;
-        border-left: 3px solid var(--yellow-border);
+        border-left: 3px solid var(--border);
         padding-left: 0.75rem;
         margin-bottom: 0.75rem;
         line-height: 1.5;
@@ -300,8 +342,8 @@
         display: grid;
       }
       .fd-box {
-        background: var(--yellow-light);
-        border-radius: 0.375rem;
+        background: var(--surface-alt);
+        border-radius: 8px;
         padding: 0.5rem 0.625rem;
       }
       .fd-box.full-width {
@@ -312,7 +354,7 @@
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.05em;
-        color: #92400e;
+        color: var(--accent);
         margin-bottom: 0.125rem;
       }
       .fd-box-value {
@@ -328,11 +370,11 @@
       }
       .priority-btn {
         padding: 0.375rem 0.75rem;
-        border-radius: 2rem;
+        border-radius: 50px;
         font-size: 0.75rem;
         font-weight: 600;
         cursor: pointer;
-        border: 2px solid var(--border);
+        border: 1.5px solid var(--border);
         background: var(--card-bg);
         color: var(--text-muted);
         transition: all 0.15s;
@@ -340,17 +382,22 @@
         white-space: nowrap;
       }
       .priority-btn:hover {
-        border-color: #94a3b8;
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      .priority-btn:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
       }
       .priority-btn.selected-top {
         background: var(--red);
-        color: white;
+        color: #191A1F;
         border-color: var(--red);
       }
       .priority-btn.selected-high {
-        background: var(--orange);
-        color: white;
-        border-color: var(--orange);
+        background: var(--yellow);
+        color: #fff;
+        border-color: var(--yellow);
       }
 
       /* ======== SUBMIT VOTES ======== */
@@ -381,8 +428,8 @@
         align-items: center;
         gap: 0.4rem;
         padding: 0.625rem 1.25rem;
-        border-radius: 0.5rem;
-        font-size: 0.875rem;
+        border-radius: 12px;
+        font-size: 0.8125rem;
         font-weight: 600;
         text-decoration: none;
         transition: all 0.15s ease;
@@ -390,15 +437,19 @@
         cursor: pointer;
         font-family: inherit;
       }
+      .btn:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
       .btn-primary {
         background: var(--accent);
         color: white;
       }
       .btn-primary:hover {
-        background: #1d4ed8;
+        background: var(--accent-hover);
       }
       .btn-primary:disabled {
-        background: #94a3b8;
+        background: var(--text-meta);
         cursor: not-allowed;
       }
       .btn-outline-dark {
@@ -407,7 +458,8 @@
         border: 1px solid var(--border);
       }
       .btn-outline-dark:hover {
-        background: #f1f5f9;
+        background: var(--surface-alt);
+        border-color: var(--accent);
       }
       .btn-sm {
         padding: 0.375rem 0.75rem;
@@ -446,12 +498,12 @@
         font-weight: 700;
       }
       .priority-badge.top {
-        background: #fecaca;
-        color: #991b1b;
+        background: rgba(250,109,108,0.15);
+        color: #c0302f;
       }
       .priority-badge.high {
-        background: #fed7aa;
-        color: #9a3412;
+        background: rgba(153,139,60,0.15);
+        color: #7a6e26;
       }
 
       /* ======== FEEDBACK TABS ======== */
@@ -498,6 +550,10 @@
         background: var(--accent-light);
         color: var(--accent);
       }
+      .tab-btn:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
 
       .cat-panel {
         display: none;
@@ -528,14 +584,14 @@
       .fb-card {
         background: var(--card-bg);
         border: 1px solid var(--border);
-        border-radius: 0.75rem;
+        border-radius: 12px;
         padding: 1.125rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
         border-left: 4px solid var(--card-accent, var(--accent));
         transition: box-shadow 0.15s;
       }
       .fb-card:hover {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 3px 10px rgba(99, 60, 153, 0.08);
       }
       .fb-quote {
         font-style: italic;
@@ -568,10 +624,10 @@
       }
       .fb-speaker {
         display: inline-block;
-        background: #f1f5f9;
-        color: #475569;
+        background: var(--surface-alt);
+        color: var(--text-muted);
         padding: 0.125rem 0.5rem;
-        border-radius: 0.375rem;
+        border-radius: 50px;
         font-size: 0.6875rem;
         font-weight: 600;
       }
@@ -614,7 +670,7 @@
       .annotation-input:focus {
         border-color: var(--accent);
         outline: none;
-        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        box-shadow: 0 0 0 3px var(--focus-ring);
       }
       .annotation-submit-row {
         display: flex;
@@ -627,16 +683,16 @@
         margin-top: 0.5rem;
       }
       .annotation-note {
-        background: #f0fdf4;
-        border-left: 3px solid var(--green);
+        background: #f5f3fa;
+        border-left: 3px solid var(--accent);
         padding: 0.375rem 0.625rem;
-        border-radius: 0.25rem;
+        border-radius: 6px;
         font-size: 0.75rem;
         margin-bottom: 0.375rem;
       }
       .annotation-note .an-author {
         font-weight: 700;
-        color: #166534;
+        color: var(--accent);
       }
       .annotation-note .an-time {
         color: var(--text-muted);
@@ -682,13 +738,13 @@
 
       /* ======== SENTIMENT & THEMES (overview section) ======== */
       .sentiment-banner {
-        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-        border: 1px solid #bfdbfe;
-        border-radius: 0.75rem;
+        background: linear-gradient(135deg, #f0eaf8 0%, #e8e0f4 100%);
+        border: 1px solid rgba(99,60,153,0.15);
+        border-radius: 12px;
         padding: 1.25rem 1.5rem;
         margin-bottom: 1.5rem;
         font-size: 0.9375rem;
-        color: #1e40af;
+        color: var(--accent-hover);
       }
       .sentiment-banner strong {
         display: block;
@@ -698,10 +754,10 @@
       .section-box {
         background: var(--card-bg);
         border: 1px solid var(--border);
-        border-radius: 0.75rem;
+        border-radius: 12px;
         padding: 1.25rem 1.5rem;
         margin-bottom: 1.5rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
       }
       .section-box-title {
         font-size: 1rem;
@@ -716,7 +772,7 @@
         background: var(--accent-light);
         color: var(--accent);
         padding: 0.3rem 0.75rem;
-        border-radius: 2rem;
+        border-radius: 50px;
         font-size: 0.75rem;
         font-weight: 600;
       }
@@ -774,15 +830,15 @@
         letter-spacing: 0.05em;
         color: var(--text-muted);
         font-weight: 700;
-        background: #f8fafc;
+        background: var(--surface-alt);
       }
       .agg-table tr:hover td {
-        background: #f8fafc;
+        background: var(--surface-alt);
       }
       .agg-bar {
         height: 0.5rem;
-        border-radius: 0.25rem;
-        background: var(--accent);
+        border-radius: 4px;
+        background: linear-gradient(90deg, var(--accent) 0%, #8566b3 100%);
         display: inline-block;
         vertical-align: middle;
         transition: width 0.3s;
@@ -825,12 +881,12 @@
         transform: translateY(0);
       }
       .toast.success {
-        background: #166534;
-        color: white;
+        background: var(--green);
+        color: #fff;
       }
       .toast.error {
-        background: #991b1b;
-        color: white;
+        background: var(--red);
+        color: #191A1F;
       }
       .toast.info {
         background: var(--accent);
@@ -931,11 +987,21 @@
         <div class="identity-bar" id="voter-identity-bar">
           <label>👤 I am:</label>
           <div class="name-chips" id="voter-chips">
-            <button class="name-chip" onclick="selectVoterName(this)">Hannah Coupe</button>
-            <button class="name-chip" onclick="selectVoterName(this)">Leora Taratula-Lyons</button>
-            <button class="name-chip" onclick="selectVoterName(this)">Rebecca Allen</button>
-            <button class="name-chip" onclick="selectVoterName(this)">Charlotte Ballard Scott</button>
-            <button class="name-chip" onclick="selectVoterName(this)">Peter Burgess</button>
+            <button class="name-chip" onclick="selectVoterName(this)">
+              Hannah Coupe
+            </button>
+            <button class="name-chip" onclick="selectVoterName(this)">
+              Leora Taratula-Lyons
+            </button>
+            <button class="name-chip" onclick="selectVoterName(this)">
+              Rebecca Allen
+            </button>
+            <button class="name-chip" onclick="selectVoterName(this)">
+              Charlotte Ballard Scott
+            </button>
+            <button class="name-chip" onclick="selectVoterName(this)">
+              Peter Burgess
+            </button>
           </div>
           <div class="identity-selected" id="voter-selected">
             <span id="voter-selected-name"></span>
@@ -994,15 +1060,27 @@
         <div class="identity-bar" id="annotator-identity-bar">
           <label>👤 I am:</label>
           <div class="name-chips" id="annotator-chips">
-            <button class="name-chip" onclick="selectAnnotatorName(this)">Hannah Coupe</button>
-            <button class="name-chip" onclick="selectAnnotatorName(this)">Leora Taratula-Lyons</button>
-            <button class="name-chip" onclick="selectAnnotatorName(this)">Rebecca Allen</button>
-            <button class="name-chip" onclick="selectAnnotatorName(this)">Charlotte Ballard Scott</button>
-            <button class="name-chip" onclick="selectAnnotatorName(this)">Peter Burgess</button>
+            <button class="name-chip" onclick="selectAnnotatorName(this)">
+              Hannah Coupe
+            </button>
+            <button class="name-chip" onclick="selectAnnotatorName(this)">
+              Leora Taratula-Lyons
+            </button>
+            <button class="name-chip" onclick="selectAnnotatorName(this)">
+              Rebecca Allen
+            </button>
+            <button class="name-chip" onclick="selectAnnotatorName(this)">
+              Charlotte Ballard Scott
+            </button>
+            <button class="name-chip" onclick="selectAnnotatorName(this)">
+              Peter Burgess
+            </button>
           </div>
           <div class="identity-selected" id="annotator-selected">
             <span id="annotator-selected-name"></span>
-            <span class="change-btn" onclick="resetAnnotatorName()">change</span>
+            <span class="change-btn" onclick="resetAnnotatorName()"
+              >change</span
+            >
           </div>
           <input type="hidden" id="annotator-name" />
           <span class="identity-hint"
@@ -1072,61 +1150,62 @@
       let VOTES = {}; // { feature_id: "top" | "high" | null }
       let ALL_TEAM_VOTES = []; // from Sheets
       let ALL_ANNOTATIONS = [];
+      let SPEAKER_OVERRIDES = {}; // { feature_index: "New Name" }
 
       const CATEGORIES = [
         {
           key: "emotions",
           label: "Emotions & Positive Reactions",
           icon: "😃",
-          color: "#22c55e",
+          color: "#7b993c",
         },
         {
           key: "pains",
           label: "Pain Points & Frustrations",
           icon: "☹️",
-          color: "#ef4444",
+          color: "#FA6D6C",
         },
         {
           key: "goals",
           label: "Goals & Desired Outcomes",
           icon: "🎯",
-          color: "#3b82f6",
+          color: "#36C7E9",
         },
         {
           key: "obstacles",
           label: "Obstacles & Challenges",
           icon: "🔗",
-          color: "#f97316",
+          color: "#998b3c",
         },
         {
           key: "workarounds",
           label: "Workarounds & Current Solutions",
           icon: "🔧",
-          color: "#8b5cf6",
+          color: "#8566b3",
         },
         {
           key: "background",
           label: "Background & Context",
           icon: "📰",
-          color: "#6b7280",
+          color: "#76808F",
         },
         {
           key: "commitments",
           label: "Commitments & Next Steps",
           icon: "🤝",
-          color: "#10b981",
+          color: "#7b993c",
         },
         {
           key: "other_notes",
           label: "Other Notable Feedback",
           icon: "📝",
-          color: "#6366f1",
+          color: "#633c99",
         },
         {
           key: "feature_requests",
           label: "Feature Requests & Ideas",
           icon: "💡",
-          color: "#eab308",
+          color: "#998b3c",
         },
       ];
 
@@ -1152,6 +1231,8 @@
         // Load remote data if persistence configured
         if (CONFIG.PERSISTENCE_ENABLED && CONFIG.APPS_SCRIPT_URL) {
           await loadRemoteData();
+          renderFeatures();
+          renderFeedback();
           restoreUserVotes();
         }
       });
@@ -1186,6 +1267,7 @@
           .map((f, i) => {
             const fid = "feature_" + i;
             const currentPriority = VOTES[fid] || "";
+            const speakerName = SPEAKER_OVERRIDES[i] || f.speaker;
             return `
       <div class="feature-item ${currentPriority === "top" ? "priority-top" : currentPriority === "high" ? "priority-high" : ""}" id="${fid}" data-fid="${fid}">
         <div class="feature-item-header">
@@ -1193,7 +1275,7 @@
             <div class="feature-item-title">💡 ${esc(f.feature_title)}</div>
           </div>
           <div style="display:flex; align-items:center; gap:0.5rem">
-            <span class="feature-item-speaker">${esc(f.speaker)}</span>
+            <span class="feature-item-speaker editable" onclick="editSpeakerName(${i}, this)" title="Click to edit speaker name">${esc(speakerName)} ✏️</span>
             <div class="priority-btns">
               <button class="priority-btn ${currentPriority === "top" ? "selected-top" : ""}"
                 onclick="setPriority('${fid}','top',this)" title="Mark as Top Priority">⭐ Top Priority</button>
@@ -1216,7 +1298,7 @@
             <div class="fd-box"><div class="fd-box-label">🚀 Priority Signals</div><div class="fd-box-value">${esc(f.priority_signals)}</div></div>
           </div>
         </div>
-        ${annotationHTML('feature_requests', i)}
+        ${annotationHTML("feature_requests", i)}
       </div>`;
           })
           .join("");
@@ -1273,68 +1355,95 @@
       //  NAME CHIP SELECTORS
       // ============================================================
       function selectVoterName(btn) {
-        document.querySelectorAll('#voter-chips .name-chip').forEach(c => c.classList.remove('selected'));
-        btn.classList.add('selected');
-        document.getElementById('voter-name').value = btn.textContent.trim();
-        document.getElementById('voter-selected-name').textContent = btn.textContent.trim();
-        document.getElementById('voter-chips').style.display = 'none';
-        document.getElementById('voter-selected').style.display = 'flex';
-        document.querySelector('#voter-identity-bar .identity-hint').style.display = 'none';
-        localStorage.setItem('bm_voter_name', btn.textContent.trim());
+        document
+          .querySelectorAll("#voter-chips .name-chip")
+          .forEach((c) => c.classList.remove("selected"));
+        btn.classList.add("selected");
+        document.getElementById("voter-name").value = btn.textContent.trim();
+        document.getElementById("voter-selected-name").textContent =
+          btn.textContent.trim();
+        document.getElementById("voter-chips").style.display = "none";
+        document.getElementById("voter-selected").style.display = "flex";
+        document.querySelector(
+          "#voter-identity-bar .identity-hint",
+        ).style.display = "none";
+        localStorage.setItem("bm_voter_name", btn.textContent.trim());
         restoreUserVotes();
         // Also sync annotator if not yet set
-        if (!document.getElementById('annotator-name').value) {
-          const match = document.querySelector(`#annotator-chips .name-chip:nth-child(${Array.from(btn.parentNode.children).indexOf(btn) + 1})`);
+        if (!document.getElementById("annotator-name").value) {
+          const match = document.querySelector(
+            `#annotator-chips .name-chip:nth-child(${Array.from(btn.parentNode.children).indexOf(btn) + 1})`,
+          );
           if (match) selectAnnotatorName(match);
         }
         updateSubmitState();
       }
 
       function resetVoterName() {
-        document.getElementById('voter-name').value = '';
-        document.querySelectorAll('#voter-chips .name-chip').forEach(c => c.classList.remove('selected'));
-        document.getElementById('voter-chips').style.display = 'flex';
-        document.getElementById('voter-selected').style.display = 'none';
-        document.querySelector('#voter-identity-bar .identity-hint').style.display = '';
-        localStorage.removeItem('bm_voter_name');
+        document.getElementById("voter-name").value = "";
+        document
+          .querySelectorAll("#voter-chips .name-chip")
+          .forEach((c) => c.classList.remove("selected"));
+        document.getElementById("voter-chips").style.display = "flex";
+        document.getElementById("voter-selected").style.display = "none";
+        document.querySelector(
+          "#voter-identity-bar .identity-hint",
+        ).style.display = "";
+        localStorage.removeItem("bm_voter_name");
         updateSubmitState();
       }
 
       function selectAnnotatorName(btn) {
-        document.querySelectorAll('#annotator-chips .name-chip').forEach(c => c.classList.remove('selected'));
-        btn.classList.add('selected');
-        document.getElementById('annotator-name').value = btn.textContent.trim();
-        document.getElementById('annotator-selected-name').textContent = btn.textContent.trim();
-        document.getElementById('annotator-chips').style.display = 'none';
-        document.getElementById('annotator-selected').style.display = 'flex';
-        document.querySelector('#annotator-identity-bar .identity-hint').style.display = 'none';
-        localStorage.setItem('bm_annotator_name', btn.textContent.trim());
+        document
+          .querySelectorAll("#annotator-chips .name-chip")
+          .forEach((c) => c.classList.remove("selected"));
+        btn.classList.add("selected");
+        document.getElementById("annotator-name").value =
+          btn.textContent.trim();
+        document.getElementById("annotator-selected-name").textContent =
+          btn.textContent.trim();
+        document.getElementById("annotator-chips").style.display = "none";
+        document.getElementById("annotator-selected").style.display = "flex";
+        document.querySelector(
+          "#annotator-identity-bar .identity-hint",
+        ).style.display = "none";
+        localStorage.setItem("bm_annotator_name", btn.textContent.trim());
         // Also sync voter if not yet set
-        if (!document.getElementById('voter-name').value) {
-          const match = document.querySelector(`#voter-chips .name-chip:nth-child(${Array.from(btn.parentNode.children).indexOf(btn) + 1})`);
+        if (!document.getElementById("voter-name").value) {
+          const match = document.querySelector(
+            `#voter-chips .name-chip:nth-child(${Array.from(btn.parentNode.children).indexOf(btn) + 1})`,
+          );
           if (match) selectVoterName(match);
         }
       }
 
       function resetAnnotatorName() {
-        document.getElementById('annotator-name').value = '';
-        document.querySelectorAll('#annotator-chips .name-chip').forEach(c => c.classList.remove('selected'));
-        document.getElementById('annotator-chips').style.display = 'flex';
-        document.getElementById('annotator-selected').style.display = 'none';
-        document.querySelector('#annotator-identity-bar .identity-hint').style.display = '';
-        localStorage.removeItem('bm_annotator_name');
+        document.getElementById("annotator-name").value = "";
+        document
+          .querySelectorAll("#annotator-chips .name-chip")
+          .forEach((c) => c.classList.remove("selected"));
+        document.getElementById("annotator-chips").style.display = "flex";
+        document.getElementById("annotator-selected").style.display = "none";
+        document.querySelector(
+          "#annotator-identity-bar .identity-hint",
+        ).style.display = "";
+        localStorage.removeItem("bm_annotator_name");
       }
 
       // Restore saved name on page load
       function restoreSavedNames() {
-        const saved = localStorage.getItem('bm_voter_name');
+        const saved = localStorage.getItem("bm_voter_name");
         if (saved) {
-          const chip = Array.from(document.querySelectorAll('#voter-chips .name-chip')).find(c => c.textContent.trim() === saved);
+          const chip = Array.from(
+            document.querySelectorAll("#voter-chips .name-chip"),
+          ).find((c) => c.textContent.trim() === saved);
           if (chip) selectVoterName(chip);
         }
-        const savedAnnotator = localStorage.getItem('bm_annotator_name');
+        const savedAnnotator = localStorage.getItem("bm_annotator_name");
         if (savedAnnotator) {
-          const chip = Array.from(document.querySelectorAll('#annotator-chips .name-chip')).find(c => c.textContent.trim() === savedAnnotator);
+          const chip = Array.from(
+            document.querySelectorAll("#annotator-chips .name-chip"),
+          ).find((c) => c.textContent.trim() === savedAnnotator);
           if (chip) selectAnnotatorName(chip);
         }
       }
@@ -1504,11 +1613,12 @@
                 '<p style="color:var(--text-muted);font-size:0.875rem;margin-bottom:1rem">Feature requests are displayed on the ⭐ Feature Priorities page for voting.</p>';
               panelHtml += '<div class="fb-grid">';
               items.forEach((item, idx) => {
+                const spkName = SPEAKER_OVERRIDES[idx] || item.speaker;
                 panelHtml += `<div class="fb-card" style="--card-accent:${cat.color}">
             <div class="fb-quote">${esc(item.quote)}</div>
             <div class="fb-meta">
               <div class="fb-meta-row"><span class="fb-meta-label">Feature</span><span class="fb-meta-val" style="font-weight:700">${esc(item.feature_title)}</span></div>
-              <div class="fb-meta-row"><span class="fb-meta-label">Speaker</span><span class="fb-speaker">${esc(item.speaker)}</span></div>
+              <div class="fb-meta-row"><span class="fb-meta-label">Speaker</span><span class="fb-speaker">${esc(spkName)}</span></div>
               <div class="fb-meta-row"><span class="fb-meta-label">Need</span><span class="fb-meta-val">${esc(item.underlying_need)}</span></div>
             </div>
             ${annotationHTML(cat.key, idx)}
@@ -1542,8 +1652,11 @@
       }
 
       function getCurrentUserName() {
-        return document.getElementById('voter-name').value.trim() ||
-               document.getElementById('annotator-name').value.trim() || '';
+        return (
+          document.getElementById("voter-name").value.trim() ||
+          document.getElementById("annotator-name").value.trim() ||
+          ""
+        );
       }
 
       function annotationHTML(category, itemIndex) {
@@ -1560,20 +1673,18 @@
           existingHtml =
             '<div class="existing-annotations">' +
             existing
-              .map(
-                (a) => {
-                  const isOwn = currentUser && a.author_name === currentUser;
-                  const safeTs = (a.timestamp || '').replace(/'/g, "\\'");
-                  const safeAuthor = (a.author_name || '').replace(/'/g, "\\'");
-                  const actionsHtml = isOwn
-                    ? `<span class="an-actions"><button onclick="editAnnotation('${safeTs}', '${safeAuthor}', '${category}', ${itemIndex})">✏️ edit</button><button onclick="deleteAnnotation('${safeTs}', '${safeAuthor}', '${category}', ${itemIndex}, ${a._row || 0})">🗑 delete</button></span>`
-                    : '';
-                  return `<div class="annotation-note" id="ann-${safeTs}">
+              .map((a) => {
+                const isOwn = currentUser && a.author_name === currentUser;
+                const safeTs = (a.timestamp || "").replace(/'/g, "\\'");
+                const safeAuthor = (a.author_name || "").replace(/'/g, "\\'");
+                const actionsHtml = isOwn
+                  ? `<span class="an-actions"><button onclick="editAnnotation('${safeTs}', '${safeAuthor}', '${category}', ${itemIndex})">✏️ edit</button><button onclick="deleteAnnotation('${safeTs}', '${safeAuthor}', '${category}', ${itemIndex}, ${a._row || 0})">🗑 delete</button></span>`
+                  : "";
+                return `<div class="annotation-note" id="ann-${safeTs}">
         ${actionsHtml}<span class="an-author">${esc(a.author_name)}</span><span class="an-time">${formatTime(a.timestamp)}</span>
         <div class="an-text">${esc(a.note)}</div>
       </div>`;
-                },
-              )
+              })
               .join("") +
             "</div>";
         }
@@ -1614,13 +1725,18 @@
 
       function editAnnotation(timestamp, authorName, category, itemIndex) {
         const ann = ALL_ANNOTATIONS.find(
-          a => a.timestamp === timestamp && a.author_name === authorName &&
-               a.category === category && String(a.item_index) === String(itemIndex)
+          (a) =>
+            a.timestamp === timestamp &&
+            a.author_name === authorName &&
+            a.category === category &&
+            String(a.item_index) === String(itemIndex),
         );
         if (!ann) return;
-        const noteEl = document.getElementById('ann-' + timestamp.replace(/'/g, "\\'"));
+        const noteEl = document.getElementById(
+          "ann-" + timestamp.replace(/'/g, "\\'"),
+        );
         if (!noteEl) return;
-        const textEl = noteEl.querySelector('.an-text');
+        const textEl = noteEl.querySelector(".an-text");
         textEl.innerHTML = `<div class="an-edit-form">
           <textarea id="edit-ann-${timestamp}">${esc(ann.note)}</textarea>
           <div class="an-edit-btns">
@@ -1635,43 +1751,58 @@
         renderFeedback();
       }
 
-      async function saveAnnotationEdit(timestamp, authorName, category, itemIndex, row) {
-        const textarea = document.querySelector('.an-edit-form textarea');
+      async function saveAnnotationEdit(
+        timestamp,
+        authorName,
+        category,
+        itemIndex,
+        row,
+      ) {
+        const textarea = document.querySelector(".an-edit-form textarea");
         if (!textarea) return;
         const newNote = textarea.value.trim();
-        if (!newNote) { showToast('Note cannot be empty', 'error'); return; }
+        if (!newNote) {
+          showToast("Note cannot be empty", "error");
+          return;
+        }
 
         try {
           await postToSheets({
-            action: 'update_annotation',
+            action: "update_annotation",
             author_name: authorName,
             row: row,
-            note: newNote
+            note: newNote,
           });
-          showToast('✓ Note updated', 'success');
+          showToast("✓ Note updated", "success");
           await loadRemoteData();
           renderFeatures();
           renderFeedback();
         } catch (e) {
-          showToast('Failed to update note', 'error');
+          showToast("Failed to update note", "error");
         }
       }
 
-      async function deleteAnnotation(timestamp, authorName, category, itemIndex, row) {
-        if (!confirm('Delete this note?')) return;
+      async function deleteAnnotation(
+        timestamp,
+        authorName,
+        category,
+        itemIndex,
+        row,
+      ) {
+        if (!confirm("Delete this note?")) return;
         try {
           await postToSheets({
-            action: 'delete_annotation',
+            action: "delete_annotation",
             author_name: authorName,
             row: row,
-            timestamp: timestamp
+            timestamp: timestamp,
           });
-          showToast('✓ Note deleted', 'success');
+          showToast("✓ Note deleted", "success");
           await loadRemoteData();
           renderFeatures();
           renderFeedback();
         } catch (e) {
-          showToast('Failed to delete note', 'error');
+          showToast("Failed to delete note", "error");
         }
       }
 
@@ -1739,7 +1870,9 @@
         // Filter out current user's remote votes to avoid double-counting with local VOTES
         const localName =
           document.getElementById("voter-name").value.trim() || "You (unsaved)";
-        const allVotes = ALL_TEAM_VOTES.filter(v => v.voter_name !== localName);
+        const allVotes = ALL_TEAM_VOTES.filter(
+          (v) => v.voter_name !== localName,
+        );
         // Add current user's local votes (may be unsaved edits)
         Object.entries(VOTES).forEach(([fid, priority]) => {
           const idx = parseInt(fid.replace("feature_", ""), 10);
@@ -1869,30 +2002,38 @@
       async function loadRemoteData() {
         if (!CONFIG.PERSISTENCE_ENABLED || !CONFIG.APPS_SCRIPT_URL) return;
         try {
-          const [votesResp, annotationsResp] = await Promise.all([
+          const [votesResp, annotationsResp, speakersResp] = await Promise.all([
             getFromSheets("get_votes"),
             getFromSheets("get_annotations"),
+            getFromSheets("get_speakers"),
           ]);
           ALL_TEAM_VOTES = votesResp.votes || [];
           ALL_ANNOTATIONS = annotationsResp.annotations || [];
+          // Apply speaker overrides from Sheets
+          const speakers = speakersResp.speakers || [];
+          speakers.forEach(s => {
+            if (s.feature_index !== undefined && s.speaker_name) {
+              SPEAKER_OVERRIDES[s.feature_index] = s.speaker_name;
+            }
+          });
         } catch (e) {
           console.warn("Could not load remote data:", e);
         }
       }
 
       function restoreUserVotes() {
-        const voterName = document.getElementById('voter-name').value.trim();
+        const voterName = document.getElementById("voter-name").value.trim();
         if (!voterName || !ALL_TEAM_VOTES.length || !DATA) return;
 
         // Build title → feature_N mapping
         const titleToFid = {};
         (DATA.feature_requests || []).forEach((f, i) => {
-          titleToFid[f.feature_title] = 'feature_' + i;
+          titleToFid[f.feature_title] = "feature_" + i;
         });
 
         // Extract this user's votes from remote data
         const restoredVotes = {};
-        ALL_TEAM_VOTES.forEach(v => {
+        ALL_TEAM_VOTES.forEach((v) => {
           if (v.voter_name === voterName) {
             const fid = titleToFid[v.feature_id];
             if (fid) restoredVotes[fid] = v.priority;
@@ -1907,7 +2048,8 @@
           updateVoteSummary();
           updateSubmitState();
           // Switch button text since they've already submitted before
-          document.getElementById('submit-votes-btn').textContent = 'Update Priorities';
+          document.getElementById("submit-votes-btn").textContent =
+            "Update Priorities";
         }
       }
 
@@ -1944,6 +2086,54 @@
         el.className = "toast " + type;
         setTimeout(() => el.classList.add("visible"), 10);
         setTimeout(() => el.classList.remove("visible"), 3000);
+      }
+
+      // ============================================================
+      //  EDITABLE SPEAKER NAMES
+      // ============================================================
+      function editSpeakerName(featureIndex, el) {
+        const currentName = SPEAKER_OVERRIDES[featureIndex] || DATA.feature_requests[featureIndex].speaker;
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.value = currentName;
+        input.className = 'speaker-edit-input';
+        input.setAttribute('data-feature-index', featureIndex);
+
+        const parent = el.parentNode;
+        parent.replaceChild(input, el);
+        input.focus();
+        input.select();
+
+        const save = async () => {
+          const newName = input.value.trim();
+          if (!newName || newName === currentName) {
+            // Revert
+            renderFeatures();
+            return;
+          }
+          SPEAKER_OVERRIDES[featureIndex] = newName;
+          renderFeatures();
+          renderFeedback();
+          // Persist to Sheets
+          if (CONFIG.PERSISTENCE_ENABLED && CONFIG.APPS_SCRIPT_URL) {
+            try {
+              await postToSheets({
+                action: 'update_speaker',
+                feature_index: featureIndex,
+                speaker_name: newName
+              });
+              showToast(`✓ Speaker updated to ${newName}`, 'success');
+            } catch (e) {
+              showToast('Failed to save speaker name', 'error');
+            }
+          }
+        };
+
+        input.addEventListener('blur', save);
+        input.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') { e.preventDefault(); input.blur(); }
+          if (e.key === 'Escape') { renderFeatures(); }
+        });
       }
     </script>
   </body>
