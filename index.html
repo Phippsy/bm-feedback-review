@@ -1235,19 +1235,18 @@
           return;
         }
 
-        renderFeatures();
-        renderFeedback();
-
-        // Restore saved identity from localStorage
+        // Restore saved identity from localStorage BEFORE first render
+        // (so restoreUserVotes can find the voter name)
         restoreSavedNames();
 
-        // Load remote data if persistence configured
+        // Load all remote data BEFORE the first render to avoid flash-to-defaults
         if (CONFIG.PERSISTENCE_ENABLED && CONFIG.APPS_SCRIPT_URL) {
           await loadRemoteData();
-          renderFeatures();
-          renderFeedback();
-          restoreUserVotes();
         }
+
+        // Single first render with all data ready
+        syncVotesFromRemote();
+        refreshUI();
       });
 
       // ============================================================
@@ -1536,11 +1535,10 @@
             `✓ ${votesArray.length} priorities saved for ${voterName}`,
             "success",
           );
-          // Reload fresh data from Sheets and re-render everything
+          // Reload fresh data from Sheets and re-render once
           await loadRemoteData();
-          renderFeatures();
-          renderFeedback();
-          restoreUserVotes();
+          syncVotesFromRemote();
+          refreshUI();
         } catch (e) {
           showToast("Failed to save — check config.js", "error");
         } finally {
@@ -1763,8 +1761,7 @@
       }
 
       function cancelAnnotationEdit() {
-        renderFeatures();
-        renderFeedback();
+        refreshUI();
       }
 
       async function saveAnnotationEdit(
@@ -1791,8 +1788,7 @@
           });
           showToast("✓ Note updated", "success");
           await loadRemoteData();
-          renderFeatures();
-          renderFeedback();
+          refreshUI();
         } catch (e) {
           showToast("Failed to update note", "error");
         }
@@ -1815,8 +1811,7 @@
           });
           showToast("✓ Note deleted", "success");
           await loadRemoteData();
-          renderFeatures();
-          renderFeedback();
+          refreshUI();
         } catch (e) {
           showToast("Failed to delete note", "error");
         }
@@ -1862,8 +1857,7 @@
           input.value = "";
           showToast("✓ Note saved", "success");
           await loadRemoteData();
-          renderFeatures();
-          renderFeedback();
+          refreshUI();
         } catch (e) {
           showToast("Failed to save note", "error");
         }
@@ -2049,17 +2043,17 @@
         }
       }
 
-      function restoreUserVotes() {
+      // Extracts this user's votes from ALL_TEAM_VOTES into VOTES.
+      // Does NOT re-render — call refreshUI() afterwards.
+      function syncVotesFromRemote() {
         const voterName = document.getElementById("voter-name").value.trim();
         if (!voterName || !DATA) return;
 
-        // Build title → feature_N mapping
         const titleToFid = {};
         (DATA.feature_requests || []).forEach((f, i) => {
           titleToFid[f.feature_title] = "feature_" + i;
         });
 
-        // Extract this user's votes from remote data
         const restoredVotes = {};
         ALL_TEAM_VOTES.forEach((v) => {
           if (v.voter_name === voterName) {
@@ -2068,17 +2062,26 @@
           }
         });
 
-        // Always apply remote state — this ensures the UI stays in sync
         VOTES = restoredVotes;
+      }
+
+      // Single atomic UI refresh — call after any data change.
+      function refreshUI() {
         renderFeatures();
         renderFeedback();
         updateVoteSummary();
         updateSubmitState();
 
-        if (Object.keys(restoredVotes).length > 0) {
+        if (Object.keys(VOTES).length > 0) {
           document.getElementById("submit-votes-btn").textContent =
             "Update Priorities";
         }
+      }
+
+      // Legacy wrapper for name-chip selection — syncs + renders in one step
+      function restoreUserVotes() {
+        syncVotesFromRemote();
+        refreshUI();
       }
 
       // ============================================================
@@ -2142,8 +2145,7 @@
             return;
           }
           SPEAKER_OVERRIDES[featureIndex] = newName;
-          renderFeatures();
-          renderFeedback();
+          refreshUI();
           // Persist to Sheets
           if (CONFIG.PERSISTENCE_ENABLED && CONFIG.APPS_SCRIPT_URL) {
             try {
