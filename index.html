@@ -927,6 +927,41 @@
         }
       }
 
+      /* Full-page loading overlay — visible until JS dismisses it */
+      .loading-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: var(--bg);
+        transition: opacity 0.35s ease, visibility 0.35s ease;
+      }
+      .loading-overlay.hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+      .loading-overlay .spinner {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-width: 4px;
+      }
+      .loading-overlay p {
+        margin-top: 1rem;
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        font-weight: 500;
+      }
+
+      /* Hide main content until data is ready (prevents flash) */
+      .main.is-loading {
+        visibility: hidden;
+        min-height: 60vh;
+      }
+
       /* ======== RESPONSIVE ======== */
       @media (max-width: 768px) {
         .main {
@@ -994,7 +1029,7 @@
       </div>
     </header>
 
-    <main class="main">
+    <main class="main is-loading">
       <!-- ===== PAGE: FEATURES (Priority Voting) ===== -->
       <section id="page-features" class="page-section active">
         <div class="identity-bar" id="voter-identity-bar">
@@ -1154,6 +1189,12 @@
 
     <div class="toast" id="toast"></div>
 
+    <!-- Full-page loading overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+      <div class="spinner"></div>
+      <p>Loading your feedback data…</p>
+    </div>
+
     <script src="config.js"></script>
     <script>
       // ============================================================
@@ -1247,6 +1288,10 @@
         // Single first render with all data ready
         syncVotesFromRemote();
         refreshUI();
+
+        // Reveal content and dismiss overlay
+        document.querySelector('.main').classList.remove('is-loading');
+        document.getElementById('loading-overlay').classList.add('hidden');
       });
 
       // ============================================================
